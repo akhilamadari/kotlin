@@ -1,0 +1,3393 @@
+Kotlin
+
+So what is Kotlin and why it exist? 
+Its programming language and Google announced support for Android . Well Kotlin belongs to JetBrains and JetBrains as a company behind the popular IntelliJ IDEA IDE in popular.
+
+JetBrains has huge Java code base and so they were familiar with some of the challenges of writing and maintaining a large Java code base. So at some point it decided to create its own language that would be completely Interoperable with Java and that would perhaps get around or overcome some of the challenges of working with a large code base written in Java and the language that it designed and implemented is Kotlin.
+
+
+Kotlin:
+Rusn anywhere the JVM can run
+Statically typed
+Object oriented
+Functional Programming
+
+Guiding Principles:
+Conciseness
+Safety
+Pragmatism
+INteroperability
+
+Before getting started kotlin works with no semicolons  :) and Members in Kotlin can be declared without class (;)
+
+Like any other programming language, it us learn with Hello World:
+fun main(args: Array<String>){  
+   println("Hello World!")  
+}  
+If you keenly observe main function takes the arguments as same as java.
+Kotlin Variable: Variable refers to a memory location. It is used to store data. The data of variable can be changed and reused depending on condition or on information passed to the program.
+Variable Declaration: Kotlin variable is declared using keyword var and val.
+var language ="Kotlin"  
+val salary = 30000  
+Difference between var and val
+var (Mutable variable): We can change the value of variable declared using var keyword later in the program.
+val (Immutable variable): We cannot change the value of variable which is declared using val keyword.
+Example
+var salary = 30000  
+salary = 40000 //execute  
+Here, the value of variable salary can be changed (from 30000 to 40000) because variable salary is declared using var keyword.
+val language = "Kotlin"  
+language = "Java" //Error  
+Val is like final keyword in java
+Data types (basic type) refers to type and size of data associated with variables and functions. Data type is used for declaration of memory location of variable which determines the features of data.
+In Kotlin, everything is an object, which means we can call member function and properties on any variable.
+Kotlin built in data type are categorized as following different categories:
+Number
+Character
+Boolean
+Array
+String
+Number Types
+Number types of data are those which hold only number type data variables. It is further categorized into different Integer and Floating point.
+Data Type
+Bit Width (Size)
+Data Range
+Byte
+8 bit
+-128 to 127
+Short
+16 bit
+-32768 to 32767
+Int
+32 bit
+-2,147,483,648 to 2,147,483,647
+Long
+64 bit
+-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807
+Float
+32 bit
+1.40129846432481707e-45 to 3.40282346638528860e+38
+Double
+64 bit
+4.94065645841246544e-324 to 1.79769313486231570e+308
+ 
+ 
+Character (Char) Data Type
+Characters are represented using the keyword Char. Char types are declared using single quotes ('').
+Data Type
+Bit Width (Size)
+Data Range
+Char
+4 bit
+-128 to 127
+Example
+val value1 = 'A'  
+//or  
+val  value2: Char  
+value2= 'A'  
+Boolean Data Types
+Boolean data is represented using the type Boolean. It contains values either true or false.
+Data Type
+Bit Width (Size)
+Data Value
+Boolean
+1 bit
+true or false
+Example
+val flag = true  
+Array
+Arrays in Kotlin are represented by the Array class. Arrays are created using library function arrayOf() and Array() constructor. Array has get (), set() function, size property as well as some other useful member functions.
+Creating Array using library function arrayOf()
+The arrayOf() function creates array of wrapper types. The item value are passed inside arrayOf() function like arrayOf(1,2,3) which creates an array[1,2,3].
+The elements of array are accessed through their index values (array[index]). Array index are start from zero.
+val id = arrayOf(1,2,3,4,5)  
+val firstId = id[0]  
+val lasted = id[id.size-1]  
+Creating Array using Array() constructor
+Creating array using Array() constructor takes two arguments in Array() constructor:
+First argument as a size of array, and
+Second argument as the function, which is used to initialize and return the value of array element given its index.
+val asc = Array(5, { i -> i * 2 }) //asc[0,2,4,6,8]  
+String
+String in Kotlin is represented by String class. String is immutable, which means we cannot change the elements in String.
+String declaration:
+val text ="Hello, Atomic Robot"  
+Types of String
+String are categorize into two types. These are:
+1. Escaped String: Escape String is declared within double quote (" ") and may contain escape characters like '\n', '\t', '\b' etc.
+val text1 ="Hello, Atomic Robot"  
+//or  
+val text2 ="Hello, Atomic Robot\n"  
+//or  
+val text3 ="Hello, \nAtomic Robot"  
+2. Raw String: Row String is declared within triple quote (""" """). It provides facility to declare String in new lines and contain multiple lines. Row String cannot contain any escape character.
+val text1 ="""  
+             Welcome   
+                 To  
+             Atomic Robot  
+    """  
+Kotlin Type Conversion
+Type conversion is a process in which one data type variable is converted into another data type. In Kotlin, implicit conversion of smaller data type into larger data type is not supported (as it supports in java). For example Int cannot be assigned into Long or Double.
+In Java
+int value1 = 10;  
+long value2 = value1;  //Valid code   
+In Kotlin
+var value1 = 10  
+val value2: Long = value1  //Compile error, type mismatch  
+However in Kotlin, conversion is done by explicit in which smaller data type is converted into larger data type and vice-versa. This is done by using helper function.
+var value1 = 10  
+val value2: Long = value1.toLong()  
+The list of helper functions used for numeric conversion in Kotlin is given below:
+toByte()
+toShort()
+toInt()
+toLong()
+toFloat()
+toDouble()
+toChar()
+Kotlin Type Conversion Example
+Let see an example to convert from Int to Long.
+fun main(args : Array<String>) {  
+    var value1 = 100  
+    val value2: Long =value1.toLong()  
+    println(value2)  
+}  
+We can also converse from larger data type to smaller data type.
+fun main(args : Array<String>) {  
+    var value1: Long = 200  
+    val value2: Int =value1.toInt()  
+    println(value2)  
+}  
+ 
+Kotlin Operator
+Operators are special characters which perform operation on operands (values or variable).There are various kind of operators available in Kotlin.
+Arithmetic operator
+Relation operator
+Assignment operator
+Unary operator
+Bitwise operation
+Logical operator
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Arithmetic Operator
+Arithmetic operators are used to perform basic mathematical operations such as addition (+), subtraction (-), multiplication (*), division (/) etc.
+Operator
+Description
+Expression
+Translate to
++
+Addition
+a+b
+a.plus(b)
+-
+Subtraction
+a-b
+a.minus(b)
+*
+Multiply
+a*b
+a.times(b)
+/
+Division
+a/b
+a.div(b)
+%
+Modulus
+a%b
+a.rem(b)
+Example of Arithmetic Operator
+fun main(args : Array<String>) {  
+var a=10;  
+var b=5;  
+println(a+b);  
+println(a-b);  
+println(a*b);  
+println(a/b);  
+println(a%b);  
+}  
+Output:
+15
+5
+50
+2
+0
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Relation Operator
+Relation operator shows the relation and compares between operands. Following are the different relational operators:
+Operator
+Description
+Expression
+Translate to
+>
+greater than
+a>b
+a.compateTo(b)>0
+<
+Less than
+a<b
+a.compateTo(b)<0
+>=
+greater than or equal to
+a>=b
+a.compateTo(b)>=0
+<=
+less than or equal to
+a<=b
+a?.equals(b)?:(b===null)
+==
+is equal to
+a==b
+a?.equals(b)?:(b===null)
+!=
+not equal to
+a!=b
+!(a?.equals(b)?:(b===null))
+Example of Relation Operator
+fun main(args : Array<String>) {  
+    val a = 5  
+    val b = 10  
+    val max = if (a > b) {  
+        println("a is greater than b.")  
+        a  
+    } else{  
+        println("b is greater than a.")  
+        b  
+    }  
+    println("max = $max")  
+}  
+Output:
+b is greater than a.
+max = 10
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Assignment operator
+Assignment operator "=" is used to assign a value to another variable. The assignment of value takes from right to left.
+Operator
+Description
+Expression
+Convert to
++=
+add and assign
+a+=b
+a.plusAssign(b)
+-=
+subtract and assign
+a-=b
+a.minusAssign(b)
+*=
+multiply and assign
+a*=b
+a.timesAssign(b)
+/=
+divide and assign
+a/=b
+a.divAssign(b)
+%=
+mod and assign
+a%=b
+a.remAssign(b)
+Example of Assignment operator
+fun main(args : Array<String>) {  
+  
+    var a =20;var b=5  
+    a+=b  
+    println("a+=b :"+ a)  
+    a-=b  
+    println("a-=b :"+ a)  
+    a*=b  
+    println("a*=b :"+ a)  
+    a/=b  
+    println("a/=b :"+ a)  
+    a%=b  
+    println("a%=b :"+ a)  
+  
+}  
+Output:
+a+=b :25
+a-=b :20
+a*=b :100
+a/=b :20
+a%=b :0
+
+
+ 
+ 
+ 
+ 
+ 
+Unary Operator
+Unary operator is used with only single operand. Following are some unary operator given below.
+Operator
+Description
+Expression
+Convert to
++
+unary plus
++a
+a.unaryPlus()
+-
+unary minus
+-a
+a.unaryMinus()
+++
+increment by 1
+++a
+a.inc()
+--
+decrement by 1
+--a
+a.dec()
+!
+not
+!a
+a.not()
+Example of Unary Operator
+fun main(args: Array<String>){  
+    var a=10  
+    var b=5  
+    var flag = true  
+    println("+a :"+ +a)  
+    println("-b :"+ -b)  
+    println("++a :"+ ++a)  
+    println("--b :"+ --b)  
+    println("!flag :"+ !flag)  
+}  
+Output:
++a :10
+-b :-5
+++a :11
+--b :4
+!flag :false
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Logical Operator
+Logical operators are used to check conditions between operands. List of logical operators are given below.
+Operator
+Description
+Expression
+Convert to
+&&
+return true if all expression are true
+(a>b) && (a>c)
+(a>b) and (a>c)
+||
+return true if any expression are true
+(a>b) || (a>c)
+(a>b) or(a>c)
+!
+return complement of expression
+!a
+a.not()
+Example of Logical Operator
+fun main(args: Array<String>){  
+    var a=10  
+    var b=5  
+    var c=15  
+    var flag = false  
+    var result: Boolean  
+    result = (a>b) && (a>c)  
+    println("(a>b) && (a>c) :"+ result)  
+    result = (a>b) || (a>c)  
+    println("(a>b) || (a>c) :"+ result)  
+    result = !flag  
+    println("!flag :"+ result)  
+  
+}  
+Output:
+(a>b) && (a>c) :false
+(a>b) || (a>c) :true
+!flag :true
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bitwise Operation
+In Kotlin, there is not any special bitwise operator. Bitwise operation is done using named function.
+Named Function
+Description
+Expression
+shl (bits)
+signed shift left
+a.shl(b)
+shr (bits)
+signed shift right
+a.shr(b)
+ushr (bits)
+unsigned shift right
+a.ushr(b)
+and (bits)
+bitwise and
+a.and(b)
+or (bits)
+bitwise or
+a.or(b)
+xor (bits)
+bitwise xor
+a.xor(b)
+inv()
+bitwise inverse
+a.inv()
+Example of Bitwise Operation
+fun main(args: Array<String>){  
+    var a=10  
+    var b=2  
+  
+    println("a.shl(b): "+a.shl(b))  
+    println("a.shr(b): "+a.shr(b))  
+    println("a.ushr(b:) "+a.ushr(b))  
+    println("a.and(b): "+a.and(b))  
+    println("a.or(b): "+a.or(b))  
+    println("a.xor(b): "+a.xor(b))  
+    println("a.inv(): "+a.inv())  
+  
+}  
+Output:
+a.shl(b): 40
+a.shr(b): 2
+a.ushr(b:) 2
+a.and(b): 2
+a.or(b): 10
+a.xor(b): 8
+a.inv(): -11
+
+
+Kotlin Standard Input/Output
+Kotlin standard input output operations are performed to flow byte stream from input device (keyboard) to main memory and from main memory to output device (screen).
+Kotlin Output
+Kotlin output operation is performed using the standard methods print() and println(). Let's see an example:
+fun main(args: Array<String>) {  
+    println("Hello World!")  
+    print("Welcome to  Atomic Robot")  
+}  
+Output
+Hello World!
+Welcome to Atomic Robot
+
+
+The methods print() and println() are internally call System.out.print() and System.out.println() respectively.
+Difference between print() and println() methods:
+print(): print() method is used to print values provided inside the method "()".
+println(): println() method is used to print values provided inside the method "()" and moves cursor to the beginning of next line.
+Example
+fun main(args: Array<String>){  
+    println(10)  
+    println("Welcome to  Atomic robot")  
+    print(20)  
+    print("Hello")  
+}  
+Output:
+10
+Welcome to  Atomic Robot
+20Hello
+
+
+Kotlin Input
+Kotlin has standard library function readLine() which is used for reads line of string input from standard input stream. It returns the line read or null. Let's see an example:
+fun main(args: Array<String>) {  
+    println("Enter your name")  
+    val name = readLine()  
+    println("Enter your age")  
+    var age: Int =Integer.valueOf(readLine())  
+    println("Your name is $name and your age is $age")  }
+Output:
+Enter your name
+Akhila
+Enter your age
+25
+Your name is Akhila and your age is 25
+
+
+While using the readLine() function, input lines other than String are explicitly converted into their corresponding types.
+To input other data type rather than String, we need to use Scanner object of java.util.Scanner class from Java standard library.
+Example Getting Integer Input
+import java.util.Scanner  
+fun main(args: Array<String>) {  
+    val read = Scanner(System.`in`)  
+    println("Enter your age")  
+    var age = read.nextInt()  
+    println("Your input age is "+age)  
+}  
+Output:
+Enter your age
+25
+Your input age is 25
+Here nextInt() is a method which takes integer input and stores in integer variable. The other data types Boolean, Float, Long and Double uses nextBoolean(), nextFloat(), nextLong() and nextDouble() to get input from user.
+Kotlin Comment
+Comments are the statements that are used for documentation purpose. Comments are ignored by compiler so that don't execute. We can also used it for providing information about the line of code. There are two types of comments in Kotlin.
+Single line comment.
+Multi line comment.
+Single line comment
+Single line comment is used for commenting single line of statement. It is done by using '//' (double slash). For example:
+fun main(args: Array<String>) {  
+// this statement used for print   
+    println("Hello World!")  
+}  
+Output
+Hello World!
+
+
+Multi line comment
+Multi line comment is used for commenting multiple line of statement. It is done by using /* */ (start with slash strict and end with star slash). For example:
+fun main(args: Array<String>) {  
+/* this statement 
+   is used 
+   for print */  
+    println("Hello World!")  
+}  
+Output:
+Hello World!
+Kotlin if Expression
+In Kotlin, if is an expression is which returns a value. It is used for control the flow of program structure. There is various type of if expression in Kotlin.
+if-else expression
+if-else if-else ladder expression
+nested if expression
+Traditional if Statement
+Syntax of traditional if statement
+if(condation){  
+//code statement  
+}  
+Syntax of traditional if else statement
+if(condation){  
+//code statement  
+}  
+else{  
+//code statement  
+}  
+Kotlin if-else Expression
+As if is an expression it is not used as standalone, it is used with if-else expression and the result of an if-else expression is assign into a variable.
+Syntax of if-else expression
+val returnValue = if (condation) {  
+     //code statement  
+    } else {  
+     // code statement  
+    }  
+    println(returnValue)  
+ 
+Kotlin if-else Expression Example
+Let's see an example of if-else expression.
+fun main(args: Array<String>) {  
+        val num1 = 10  
+        val num2 =20  
+        val result = if (num1 > num2) {  
+            "$num1 is greater than $num2"  
+        } else {  
+            "$num1 is smaller than $num2"  
+        }  
+        println(result)  
+}  
+Output:
+10 is smaller than 20
+
+
+We can remove the curly braces of if-else body by writing if expression in only one statement.
+For example:
+fun main(args: Array<String>) {  
+        val num1 = 10  
+        val num2 =20  
+        val result = if (num1 > num2) "$num1 is greater than $num2" else "$num1 is smaller than $num2"  
+        println(result)  
+}  
+Using if-else expression in one single line statement is like ternary operator in Java. Kotlin does not support any ternary operator.
+Kotlin if-else if-else Ladder Expression
+Let's see an example of if-else if-else ladder expression.
+fun main(args: Array<String>) {  
+    val num = 10  
+    val result = if (num > 0){  
+        "$num is positive"  
+    }else if(num < 0){  
+        "$num is negative"  
+    }else{  
+        "$num is zero"  
+    }  
+    println(result)  
+}  
+Output:
+10 is positive
+
+
+ 
+Kotlin Nested if Expression
+Let's see an example of nested if expression.
+fun main(args: Array<String>) {  
+    val num1 = 25  
+    val num2 = 20  
+    val num3 = 30  
+    val result = if (num1 > num2){  
+  
+        val max = if(num1 > num3){  
+            num1  
+        }else{  
+            num3  
+        }  
+        "body of if "+max  
+    }else if(num2 > num3){  
+        "body of else if"+num2  
+    }else{  
+        "body of else "+num3  
+    }  
+    println("$result")  
+}  
+Output:
+body of if 30
+ 
+Kotlin when Expression
+Kotlin, when expression is a conditional expression which returns the value. Kotlin, when expression is replacement of switch statement. Kotlin, when expression works as a switch statement of other language (Java, C++, C).
+Using when as an Expression
+Let's see a simple example of when expression.
+fun main(args: Array<String>){  
+    var number = 4  
+    var numberProvided = when(number) {  
+        1 -> "One"  
+        2 -> "Two"  
+        3 -> "Three"  
+        4 -> "Four"  
+        5 -> "Five"  
+        else -> "invalid number"  
+    }  
+    println("You provide $numberProvided")  
+}  
+Output:
+You provide Four
+
+
+Using when Without Expression
+It is not mandatory to use when as an expression, it can be used as normally as it used in other language.
+For Example
+fun main(args: Array<String>){  
+  
+    var number = 4  
+    when(number) {  
+        1 -> println("One")  
+        2 -> println("Two")  
+        3 -> println("Three")  
+        4 -> println("Four")  
+        5 -> println("Five")  
+        else -> println("invalid number")  
+    }  
+  
+}  
+Output:
+Four
+
+
+Multiple Statement of when Using Braces
+We can use multiple statement enclosed within block of condition.
+For Example
+fun main(args: Array<String>){  
+    var number = 1  
+    when(number) {  
+        1 -> {  
+            println("Monday")  
+            println("First day of the week")  
+        }  
+        7 -> println("Sunday")  
+        else -> println("Other days")  
+    }  
+}  
+Output:
+Monday
+First day of the week
+
+
+Multiple branches of when
+We can use multiple branches of condition separated with a comma. It is used, when we need to run a same logic for multiple choices.
+fun main(args: Array<String>){  
+    var number = 8  
+    when(number) {  
+        3, 4, 5, 6 ->  
+            println("It is summer season")  
+        7, 8, 9 ->  
+            println("It is rainy season")  
+        10, 11 ->  
+            println("It is autumn season")  
+        12, 1, 2 ->  
+            println("It is winter season")  
+        else -> println("invalid input")  
+    }  
+}  
+Output:
+It is rainy season
+
+
+Using when in the range
+The when expression also check the ranges of input provided in when condition. A range is created using .. (double dot) operator. The in operator is used to check if a value belongs to a range.
+For Example:
+fun main(args: Array<String>){  
+    var number = 7  
+    when(number) {  
+        in 1..5 -> println("Input is provided in the range 1 to 5")  
+        in 6..10 -> println("Input is provided in the range 6 to 10")  
+        else -> println("none of the above")  
+    }  
+}  
+Output:
+Input is provided in the range 6 to 10
+Kotlin for Loop
+Kotlin for loop is used to iterate a part of program several times. It iterates through arrays, ranges, collections, or anything that provides for iterate. Kotlin for loop is equivalent to the foreach loop in languages like C#.
+Syntax of for loop in Kotlin:
+for (item in collection){  
+//body of loop  
+}  
+Iterate through array
+Let's see a simple example of iterating the elements of array.
+fun main(args : Array<String>) {  
+    val marks = arrayOf(80,85,60,90,70)  
+    for(item in marks){  
+        println(item)  
+    }  
+}  
+Output:
+80
+85
+60
+90
+70
+
+
+If the body of for loop contains only one single line of statement, it is not necessary to enclose within curly braces {}.
+fun main(args : Array<String>) {  
+    val marks = arrayOf(80,85,60,90,70)  
+    for(item in marks)  
+        println(item)  
+}  
+The elements of an array are iterated on the basis of indices (index) of array. For example:
+fun main(args : Array<String>) {  
+     
+    val marks = arrayOf(80,85,60,90,70)  
+    for(item in marks.indices)  
+       println("marks[$item]: "+ marks[item])  
+}  
+Output:
+marks[0]: 80
+marks[1]: 85
+marks[2]: 60
+marks[3]: 90
+marks[4]: 70
+
+
+Iterate through range
+Let's see an example of iterating the elements of range.
+fun main(args : Array<String>) {  
+  
+    print("for (i in 1..5) print(i) = ")  
+    for (i in 1..5) print(i)  
+    println()  
+    print("for (i in 5..1) print(i) = ")  
+    for (i in 5..1) print(i)             // prints nothing  
+    println()  
+    print("for (i in 5 downTo 1) print(i) = ")  
+    for (i in 5 downTo 1) print(i)  
+    println()  
+    print("for (i in 5 downTo 2) print(i) = ")  
+    for (i in 5 downTo 2) print(i)  
+    println()  
+    print("for (i in 1..5 step 2) print(i) = ")  
+    for (i in 1..5 step 2) print(i)  
+    println()  
+    print("for (i in 5 downTo 1 step 2) print(i) = ")  
+    for (i in 5 downTo 1 step 2) print(i)  
+}  
+Output:
+for (i in 1..5) print(i) = 12345
+for (i in 5..1) print(i) = 
+for (i in 5 downTo 1) print(i) = 54321
+for (i in 5 downTo 2) print(i) = 5432
+for (i in 1..5 step 2) print(i) = 135
+for (i in 5 downTo 1 step 2) print(i) = 531
+ 
+Kotlin while Loop
+The while loop is used to iterate a part of program several time. Loop executed the block of code until the condition has true. Kotlin while loop is similar to Java while loop.
+Syntax
+while(condition){  
+//body of loop  
+}  
+Example of while Loop
+Let's see a simple example of while loop printing value from 1 to 5.
+fun main(args: Array<String>){  
+    var i = 1  
+    while (i<=5){  
+        println(i)  
+        i++  
+    }  
+}  
+Output:
+1
+2
+3
+4
+5
+
+
+ 
+Kotlin Infinite while Loop
+The while loop executes a block of code to infinite times, if while condition remain true.
+For example:
+fun main(args: Array<String>){  
+        while (true){  
+        println("infinite loop")  
+        }  
+}  
+Output:
+infinite loop
+infinite loop
+infinite loop
+.
+.
+.
+.
+infinite loop
+infinite loop
+
+ 
+infinite loop
+infinite loop
+infinite loop
+infinite loop
+
+
+ 
+Kotlin do-while Loop
+The do-while loop is similar to while loop except one key difference. A do-while loop first execute the body of do block after that it check the condition of while.
+As a do block of do-while loop executed first before checking the condition, do-while loop execute at least once even the condition within while is false. The while statement of do-while loop end with ";" (semicolon).
+Syntax
+do{  
+//body of do block  
+}  
+while(condition);  
+Example of do -while loop
+Let's see a simple example of do-while loop printing value 1 to 5.
+fun main(args: Array<String>){  
+    var i = 1  
+    do {  
+        println(i)  
+        i++  
+    }  
+    while (i<=5);  
+}  
+Output:
+1
+2
+3
+4
+5
+
+
+Example of do -while loop even condition of while if false
+In this example do-while loop execute at once time even the condition of while is false.
+fun main(args: Array<String>){  
+    var i = 6  
+    do {  
+        println(i)  
+        i++  
+    }  
+    while (i<=5);  
+}  
+Output:
+6
+
+
+Kotlin Return and Jump
+There are three jump expressions in Kotlin. These jump expressions are used for control the flow of program execution. These jump structures are:
+break
+continue
+return
+Break Expression
+A break expression is used for terminate the nearest enclosing loop. It is almost used with if-else condition.
+For example:
+for(..){  
+       //body of for  
+       if(checkCondition){  
+           break;  
+       }  
+}  
+In the above example, for loop terminates its loop when if condition execute break expression.
+Kotlin break example:
+fun main(args: Array<String>) {  
+    for (i in 1..5) {  
+        if (i == 3) {  
+            break  
+        }  
+        println(i)  
+    }  
+}  
+Output:
+1
+2
+
+
+In the above example, when the value of i became equal to 3 and satisfy the if condition(i==3) than the break expression execute and terminate for loop.
+Kotlin Labeled break Expression
+Labeled is the form of identifier followed by the @ sign, for example abc@, test@. To make an expression as label, we just put a label in front of expression.
+Kotlin labeled break expression is used to terminate the specific loop. This is done by using break expression with @ sign followed by label name (break@loop).
+Kotlin labeled break example
+fun main(args: Array<String>) {  
+    loop@ for (i in 1..3) {  
+        for (j in 1..3) {  
+            println("i = $i and j = $j")  
+            if (i == 2)  
+                break@loop  
+        }  
+    }  
+}  
+Output:
+i = 1 and j = 1
+i = 1 and j = 2
+i = 1 and j = 3
+i = 2 and j = 1
+
+
+In the above example, when the value of i became 2 and satisfy the if condition which execute break expression followed by labeled name. The break expression followed by labeled name terminates the body of label identifier.
+ 
+Kotlin continue Jump Structure: Kotlin, continue statement is used to repeat the loop. It continues the current flow of the program and skips the remaining code at specified condition.
+The continue statement within a nested loop only affects the inner loop.
+For example
+for(..){  
+       //body of for above if  
+       if(checkCondition){  
+           continue  
+       }  
+//body of for below if  
+}  
+In the above example, for loop repeat its loop when if condition execute continue. The continue statement makes repetition of loop without executing the below code of if condition.
+Kotlin continue example
+fun main(args: Array<String>) {  
+        for (i in 1..3) {  
+            println("i = $i")  
+            if (j == 2) {  
+                continue  
+            }  
+            println("this is below if")  
+        }  
+}  
+Output:
+i = 1
+this is below if
+i = 2
+i = 3
+this is below if
+
+
+Kotlin Labeled continue Expression
+Labeled is the form of identifier followed by the @ sign, for example abc@, test@. To make an expression as label, we just put a label in front of expression.
+Kotlin, labeled continue expression is used for repetition of specific loop (labeled loop). This is done by using continue expression with @ sign followed by label name (continue@labelname).
+Kotlin labeled continue example
+fun main(args: Array<String>) {  
+    labelname@ for (i in 1..3) {  
+    for (j in 1..3) {  
+        println("i = $i and j = $j")  
+        if (i == 2) {  
+            continue@labelname  
+        }  
+        println("this is below if")  
+    }  
+ }  
+}  
+Output:
+i = 1 and j = 1
+this is below if
+i = 1 and j = 2
+this is below if
+i = 1 and j = 3
+this is below if
+i = 2 and j = 1
+i = 3 and j = 1
+this is below if
+i = 3 and j = 2
+this is below if
+i = 3 and j = 3
+this is below if
+ 
+Functions:
+ 
+Function is a group of inter related block of code which performs a specific task. Function is used to break a program into different sub module. It makes reusability of code and makes program more manageable.
+In Kotlin, functions are declared using fun keyword. There are two types of functions depending on whether it is available in standard library or defined by user.
+Standard library function
+User defined function
+Standard Library Function
+Kotlin Standard library function is built-in library functions which are implicitly present in library and available for use.
+For example
+fun main(args: Array<String>){  
+    var number = 25  
+    var result = Math.sqrt(number.toDouble())  
+    print("Square root of $number is $result")  
+}  
+Output:
+Square root of 25 is 5.0
+
+
+Here, sqrt() is a library function which returns square root of a number (Double value).
+print() library function which prints a message to standard output stream.
+User defined Function
+User defined function is a function which is created by user. User defined function takes the parameter(s), perform an action and return the result of that action as a value.
+Kotlin functions are declared using the fun keyword. For example:
+fun functionName(){  
+// body of function  
+}  
+We have to call the function to run codes inside the body of the function.
+functionName()  
+Kotlin simple function example
+fun main(args: Array<String>){  
+    sum()  
+    print("code after sum")  
+}  
+fun sum(){  
+    var num1 =5  
+    var num2 = 6  
+    println("sum = "+(num1+num2))  
+}  
+Output:
+sum = 11
+code after sum
+
+
+Kotlin Parameterize Function and Return Value
+Functions are also takes parameter as arguments and return value. Kotlin functions are defined using Pascal notation, i.e. name:type (name of parameter and its type). Parameters in function are separated using commas.
+If a function does not returns any value than its return type is Unit. It is optional to specify the return type of function definition which does not returns any value.
+fun functionName(number1: Int, number2: Int){  
+.. .. ..  
+}  
+.. .. ..  
+functionName(value1, value2)  
+.. .. ..  
+Kotlin parameterize function example
+fun main(args: Array<String>){  
+   val result = sum(5, 6)  
+    print(result)  
+}  
+fun sum(number1: Int, number2:Int): Int{  
+    val add = number1+number2  
+    return add  
+}  
+Output:
+11
+Kotlin Recursion Function
+Recursion function is a function which calls itself continuously. This technique is called recursion.
+Syntax
+fun functionName(){    
+.. .. ..  
+functionName() //calling same function  
+}    
+Kotlin recursion function example 1: Finite times
+Let's see an example of recursion function printing count.
+var count = 0  
+fun rec(){  
+    count++;  
+    if(count<=5){  
+        println("hello "+count);  
+        rec();  
+    }  
+}  
+fun main(args: Array<String>) {  
+    rec();  
+}  
+Output:
+hello 1
+hello 2
+hello 3
+hello 4
+hello 5
+
+
+Kotlin recursion function example 2: Factorial Number
+Let's see an example of recursion function calculating factorial of number.
+fun main(args: Array<String>) {  
+    val number = 5  
+    val result: Long  
+    result = factorial(number)  
+    println("Factorial of $number = $result")  
+}  
+  
+fun factorial(n: Int): Long {  
+    return if(n == 1){  
+          n.toLong()  
+    }  
+    else{  
+        n*factorial(n-1)  
+    }  
+}  
+Output:
+Factorial of 5 = 120
+
+
+ 
+Working process of above factorial example
+factorial(5)   
+   factorial(4)   
+      factorial(3)   
+         factorial(2)   
+            factorial(1)   
+               return 1   
+            return 2*1 = 2   
+         return 3*2 = 6   
+      return 4*6 = 24   
+   return 5*24 = 120  
+Kotlin Tail Recursion
+Before we will discuss about the tail recursion, let's try to make an example which calculate sum of nth (100000 larger number) using general (normal) recursion.
+General Recursion
+Let's see an example of calculating sum of nth (100000 larger number) using general (normal) recursion.
+fun main(args: Array<String>) {  
+    var result = recursiveSum(100000)  
+    println(result)  
+}  
+fun recursiveSum(n: Long) : Long {  
+    return if (n <= 1) {  
+        n  
+    } else {  
+        n + recursiveSum(n - 1)  
+    }  
+}  
+Output:
+Exception in thread "main" java.lang.StackOverflowError
+
+
+The above example throws an exception of "java.lang.StackOverflowError". This is because the compiler is unable to call large number of recursive function call.
+Tail Recursion
+Tail recursion is a recursion which performs the calculation first, then makes the recursive call. The result of current step is passed into the next recursive call.
+Tail recursion follows one rule for implementation. This rule is as follow:
+The recursive call must be the last call of the method. To declare a recursion as tail recursion we need to use tailrec modifier before the recursive function.
+Kotlin Tail Recursion Example 1: calculating sun of nth(100000) number
+Let's see an example of calculating sum of nth (100000 larger number) using tail recursion.
+fun main(args: Array<String>) {  
+    var number = 100000.toLong()  
+    var result = recursiveSum(number)  
+    println("sun of upto $number number = $result")  
+}  
+tailrec fun recursiveSum(n: Long, semiresult: Long = 0) : Long {  
+    return if (n <= 0) {  
+        semiresult  
+    } else {  
+        recursiveSum( (n - 1), n+semiresult)  
+    }  
+}  
+Output:
+sun of upto 100000 number = 5000050000
+
+
+Kotlin Tail Recursion Example 2: calculating factorial of number
+Let's see an example of calculating factorial of number using tail recursion.
+fun main(args: Array<String>) {  
+    val number = 4  
+    val result: Long  
+    result = factorial(number)  
+    println("Factorial of $number = $result")  
+}  
+  
+tailrec fun factorial(n: Int, run: Int = 1): Long {  
+    return if (n == 1){  
+        run.toLong()  
+    } else {  
+        factorial(n-1, run*n)  
+    }  
+}  
+Output:
+Factorial of 4 = 24
+Kotlin Default and Named Argument 
+Kotlin Default Argument
+Kotlin provides a facility to assign default argument (parameter) in a function definition.
+If a function is called without passing any argument than default argument are used as parameter of function definition. And when a function is called using argument, than the passing argument is used as parameter in function definition.
+Default argument example 1: passing no argument in function call
+fun main(args: Array<String>) {  
+    run()  
+}  
+fun run(num:Int= 5, latter: Char ='x'){  
+    print("parameter in function definition $num and $latter")  
+}  
+Output:
+parameter in function definition 5 and x
+
+
+In the above program, run() function calls with no argument, the default parameter are used in function definition.
+Default argument example 2: passing some argument in function call
+fun main(args: Array<String>) {  
+    run(3)  
+}  
+fun run(num:Int= 5, latter: Char ='x'){  
+    print("parameter in function definition $num and $latter")  
+}  
+Output:
+parameter in function definition 3 and x
+
+
+In the above program, run() function calls with one (first) argument, the first parameter of the function definition is uses the value passed to the function. And the second parameter is uses as a default argument.
+Default argument example 3: passing all argument in function call
+fun main(args: Array<String>) {  
+    run(3,'a')  
+}  
+fun run(num:Int= 5, latter: Char ='x'){  
+    print("parameter in function definition $num and $latter")  
+}  
+Output:
+parameter in function definition 3 and a
+
+
+As all the arguments are passed in run() function call, the parameters of function definition uses the argument passed in function call.
+Kotlin Named Argument
+Before we will discuss about the named parameter, let's do some modify in the above program.
+For example:
+fun main(args: Array<String>) {  
+    run('a')  
+}  
+fun run(num:Int= 5, latter: Char ='x'){  
+    print("parameter in function definition $num and $latter")  
+}  
+Output:
+Error: Kotlin: The character literal does not conform to the expected type Int
+
+
+Here, we are try to pass parameter 'a' from function call to function definition in the second argument. But compiler assumes that the parameter 'a' (Char type) passed for first argument (Int type) this causes error in program.
+Named Argument
+To solve the above problem a named argument is used.
+A named argument is an argument in which we define the name of argument in the function call. The name defined to argument of function call checks the name in the function definition and assign to it.
+Kotlin Named Argument Example
+fun main(args: Array<String>) {  
+    run(latter='a')  
+}  
+fun run(num:Int= 5, latter: Char ='x'){  
+    print("parameter in function definition $num and $latter")  
+}  
+Output:
+parameter in function definition 5 and a
+Kotlin Lambda Function
+Lambda is a function which has no name. Lambda is defined with a curly braces {} which takes variable as a parameter (if any) and body of function. The body of function is written after variable (if any) followed by -> operator.
+Syntax of lambda
+{ variable -> body_of_function}  
+Before we talk about lambda, let's see a simple example of addition of two numbers using normal function.
+Normal function: addition of two numbers
+In this example, we create a function addNumber() passing two arguments (a,b) calling from the main function.
+fun main(args: Array<String>){  
+    addNumber(5,10)  
+}  
+fun addNumber(a: Int, b: Int){  
+    val add = a + b  
+    println(add)  
+}  
+Output:
+15
+
+
+Lambda function: addition of two numbers
+The above program will be rewritten using lambda function as follow:
+fun main(args: Array<String>){  
+    val myLambda: (Int) -> Unit= {s: Int -> println(s) } //lambda function  
+    addNumber(5,10,myLambda)  
+}  
+fun addNumber(a: Int, b: Int, mylambda: (Int) -> Unit ){   //high level function lambda as parameter  
+    val add = a + b  
+    mylambda(add) // println(add)  
+}  
+Output:
+15
+Higher order function
+High order function (Higher level function) is a function which accepts function as a parameter or returns a function or can do both. Means, instead of passing Int, String, or other types as a parameter in a function we can pass a function as a parameter in other function.
+Let's see the following example:
+fun myFun(org: String,portal: String, fn: (String,String) -> String): Unit {  
+    val result = fn(org,portal)  
+    println(result)  
+}  
+In this above example, we defined a function myFun() with three parameters. The first and second parameter take String and the third parameter as a type of function from String to String. The parameter String to String type means function takes string as an input and returns output as string types.
+To call this above function, we can pass function literal or lambda. For example:
+fun myFun(org: String,portal: String, fn: (String,String) -> String): Unit {  
+    val result = fn(org,portal)  
+    println(result)  
+}  
+  
+fun main(args: Array<String>){  
+    val fn:(String,String)->String={org,portal->"$org develop $portal"}  
+    myFun("sssit.org","javatpoint.com",fn)  
+}  
+Output:
+sssit.org develop javatpoint.com
+
+
+The above higher order function can also be called in another ways as below mention code in main() function:
+myFun("sssit.org","javatpoint.com",{org,portal->"$org develop $portal"})
+Inline Function
+An inline function is declare with a keyword inline. The use of inline function enhances the performance of higher order function. The inline function tells the compiler to copy parameters and functions to the call site.
+The virtual function or local function cannot be declared as inline. Following are some expressions and declarations which are not supported anywhere inside the inline functions:
+Declaration of local classes
+Declaration of inner nested classes
+Function expressions
+Declarations of local function
+Default value for optional parameters
+Let's see the basic example of inline function:
+fun main(args: Array<String>) {  
+inlineFunction({ println("calling inline functions")})  
+}  
+  
+inline fun inlineFunction(myFun: () -> Unit ) {  
+myFun()  
+    print("code inside inline function")  
+}  
+ 
+Output:
+calling inline functions
+code inside inline function
+
+
+Non local control flow
+From inline function, we can return from lambda expression itself. This will also lead to exit from the function in which inline function was called. The function literal is allowed to have non local return statements in such case.
+fun main(args: Array<String>) {  
+inlineFunction({ println("calling inline functions")  
+        return},{ println("next parameter in inline functions")})  
+}  
+  
+inline fun inlineFunction(myFun: () -> Unit, nxtFun: () -> Unit) {  
+myFun()  
+nxtFun()  
+    print("code inside inline function")  
+}  
+Output:
+calling inline functions
+
+
+crossinline annotation
+To prevent return from lambda expression and inline function itself, we can mark the lambda expression as crossinline. This will throw a compiler error if it found a return statement inside that lambda expression.
+fun main(args: Array<String>) {  
+inlineFunction({ println("calling inline functions")  
+        return // compile time error  
+},{ println("next parameter in inline functions")})  
+}  
+  
+inline fun inlineFunction(crossline myFun: () -> Unit, nxtFun: () -> Unit) {  
+myFun()  
+nxtFun()  
+    print("code inside inline function")  
+}  
+noinline modifier
+In inline function, when we want some of lambdas passed in inline function to be an inlined, mark other function parameter with noinline modifier. This is used to set expressions not to be inlined in the call.
+fun main(args: Array<String>) {  
+inlineFunctionExample({  println("calling inline functions")},  
+            {  println("next parameter in inline functions")} )  
+  
+println("this is main function closing")  
+}  
+  
+inline fun inlineFunctionExample(myFun: () -> Unit, noinline nxtFun: () -> Unit  ) {  
+myFun()  
+nxtFun()  
+println("code inside inline function")  
+}  
+Output:
+calling inline functions
+next parameter in inline functions
+code inside inline function
+this is main function closing
+Kotlin Array
+Array is collection of similar data types either of Int, String etc. Array in Kotlinis mutable in nature with fixed size which means we can perform both read and write operations on elements of array.
+Constructor of array:
+Array constructor is declared with specified size and init function. The init function is used to returns the elements of array with their index.
+Array(size: Int, init: (Int) -> T)  
+Kotlin Array can be created using arrayOf(), intArrayOf(), charArrayOf(), booleanArrayOf(), longArrayOf(), shortArrayOf(), byteArrayOf() functions.
+Kotlin array declaration - using arrayOf() function
+var myArray1 = arrayOf(1,10,4,6,15)  
+var myArray2 = arrayOf<Int>(1,10,4,6,15)  
+val myArray3 = arrayOf<String>("Ajay","Prakesh","Michel","John","Sumit")  
+var myArray4= arrayOf(1,10,4, "Ajay","Prakesh")  
+Kotlin array declaration - using intArrayOf() function
+var myArray5: IntArray = intArrayOf(5,10,20,12,15)  
+Modify and access elements of array
+Kotlin has set() and get() functions that can direct modify and access the particular element of array respectively.
+The set() function is used to set element at particular index location. This is also done with assigning element at array index. Array get() function is used to get element from specified index.
+Kotlin array set() function example
+fun main(args: Array<String>) {  
+val array1 = arrayOf(1,2,3,4)  
+val array2 = arrayOf<Long>(11,12,13,14)  
+    array1.set(0,5)  
+    array1[2] = 6  
+  
+    array2.set(2,10)  
+    array2[3] = 8  
+  
+    for(element in array1){  
+println(element)  
+    }  
+println()  
+    for(element in array2){  
+println(element)  
+    }  
+}  
+Output:
+5
+2
+6
+4
+
+11
+12
+10
+8
+
+
+Kotlin array get() function example
+fun main(args: Array<String>) {  
+val array1 = arrayOf(1,2,3,4)  
+val array2 = arrayOf<Long>(11,12,13,14)  
+println(array1.get(0))  
+println(array1[2])  
+println()  
+println(array2.get(2))  
+println(array2[3])  
+  
+}  
+Output:
+1
+3
+
+13
+14
+
+
+Kotlin Array Example 1:
+In this example, we are simply initialize an array of size 5 with default value as 0 and traverse its elements. The index value of array starts from 0. First element of array is placed at index value 0 and last element at one less than the size of array.
+fun main(args: Array<String>){  
+var myArray = Array<Int>(5){0}  
+  
+    for(element in myArray){  
+println(element)  
+    }  
+}  
+Output:
+0
+0
+0
+0
+0
+
+
+Kotlin Array Example 2:
+We can also rewrite the value of array using its index value. Since, we can able to modify the value of array, so array is called as mutable property.
+For example:
+fun main(args: Array<String>){  
+var myArray = Array<Int>(5){0}  
+  
+myArray[1]= 10  
+myArray[3]= 15  
+  
+    for(element in myArray){  
+println(element)  
+    }  
+}  
+Output:
+0
+10
+0
+15
+0
+
+
+Kotlin Array Example 3 - using arrayOf() and intArrayOf() function:
+Array in Kotlin can also be declared using library functions such as arrayOf(), intArrayOf(), etc. Let's see the example of array using arrayOf() and intArrayOf() function.
+fun main(args: Array<String>){  
+val name = arrayOf<String>("Ajay","Prakesh","Michel","John","Sumit")  
+var myArray2 = arrayOf<Int>(1,10,4,6,15)  
+var myArray3 = arrayOf(5,10,20,12,15)  
+var myArray4= arrayOf(1,10,4, "Ajay","Prakesh")  
+var myArray5: IntArray = intArrayOf(5,10,20,12,15)  
+  
+    for(element in name){  
+println(element)  
+    }  
+  
+println()  
+    for(element in myArray2){  
+println(element)  
+    }  
+println()  
+    for(element in myArray3){  
+println(element)  
+    }  
+println()  
+    for(element in myArray4){  
+println(element)  
+    }  
+println()  
+    for(element in myArray5){  
+println(element)  
+    }  
+  
+}  
+Output:
+Ajay
+Prakesh
+Michel
+John
+Sumit
+
+1
+10
+4
+6
+15
+
+5
+10
+20
+12
+15
+
+1
+10
+4
+Ajay
+Prakesh
+
+5
+10
+15
+20
+25
+
+
+Kotlin Array Example 4
+Suppose when we try to insert an element at index position greater than array size then what will happen?
+It will throw an ArrayIndexOutOfBoundException. This is because the index value is not present at which we tried to insert element. Due to this, array is called fixed size length. For example:
+fun main(args: Array<String>){  
+var myArray5: IntArray = intArrayOf(5,10,20,12,15)  
+  
+    myArray5[6]=18 // ArrayIndexOutOfBoundsException  
+    for(element in myArray5){  
+println(element)    
+    }  
+}  
+Output:
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 6
+	at ArrayListKt.main(Array.kt:4)
+
+
+Kotlin Array Example 5 - traversing using range:
+The Kotlin's array elements are also traversed using index range (minValue..maxValue) or (maxValue..minValue). Let's see an example of array traversing using range.
+fun main(args: Array<String>){  
+var myArray5: IntArray = intArrayOf(5,10,20,12,15)  
+  
+    for (index in 0..4){  
+println(myArray5[index])  
+    }  
+println()  
+    for (index in 0..myArray5.size-1){  
+println(myArray5[index])  
+    }  
+}  
+Output:
+5
+10
+20
+12
+15
+
+5
+10
+20
+
+
+Kotlin String
+The String class represents an array of char types. Strings are immutable which means the length and elements cannot be changed after their creation.
+val ch = charArrayOf('h', 'e', 'l', 'l', 'o')  
+    val st = String(ch)  
+Unlike Java, Kotlin does not require a new keyword to instantiate an object of a String class. A String can be simply declared within double quote (" ") known as escaped string or triple quote(""" """) known as raw string.
+val str1 = "Hello, javaTpoint"  
+val str2 = """Welcome To JavaTpoint"""  
+Kotlin String Property
+Property
+Description
+length: Int
+It returns the length of string sequence.
+indices: IntRange
+It returns the ranges of valid character indices from current char sequence.
+lastIndex: Int
+It returns the index of last character from char sequence.
+String Function
+Functions
+Description
+compareTo(other: String): Int
+It compares the current object with specified object for order. It returns zero if current is equals to specified other object.
+get(index: Int): Char
+It returns the character at given index from the current character sequence.
+plus(other: Any?): String
+It returns the concatenate string with the string representation of the given other string.
+subSequence(startIndex: Int,endIndex: Int): CharSequence
+It returns the new character sequence from current character sequence, starting from startIndex to endIndex.
+CharSequence.contains(other: CharSequence, ignoreCase: Boolean = false):Boolean
+It returns true if the character sequence contains the other specified character sequence.
+CharSequence.count(): Int
+It returns the length of char sequence.
+String.drop(n: Int): String
+It returns a string after removing the first n character.
+String.dropLast(n: Int): String
+It returns a string after removing the last n character.
+String.dropWhile
+(predicate: (Char) -> Boolean
+): String
+It returns a character sequence which contains all the characters, except first characters which satisfy the given predicate.
+CharSequence.elementAt(index: Int): Char
+It returns a character at the given index or throws an IndexOutOfBoundsException if the index does not exist in character sequence.
+CharSequence.indexOf(char: Char, startIndex: Int = 0,
+ignoreCase: Boolean = false
+): Int
+It returns the index of first occurrence of the given character, starting from the given index value.
+CharSequence.indexOfFirst(
+predicate: (Char) -> Boolean
+): Int
+It returns the index of first character which match the given predicate, or -1 if the character sequence not contains any such character.
+CharSequence.indexOfLast(
+predicate: (Char) -> Boolean
+): Int
+It returns the index of last character which match the given predicate, or -1 if the character sequence not contains any such character.
+CharSequence.getOrElse(index: Int, defaultValue: (Int) ->Char): Char
+It returns the character at specified index or the result of calling the defaultValue function if the index is out of bound of current character sequence.
+CharSequence.getOrNull(index: Int): Char?
+It returns a character at the given index or returns null if the index is out of bound from character sequence.
+String elements and templates
+String elements
+The characters which are present in string are known as elements of string. Element of string are accessed by indexing operation string[index]. String's index value starts from 0 and ends at one less than the size of string string[string.length-1]. Index 0 represent first element, index 1 represent second element and so on.
+val str ="Hello, javatpoint"  
+println(str[0]) //prints H  
+Example of accessing string element
+fun main(args: Array<String>) {  
+  
+val str = "Hello, javatpoint!"  
+println(str[0])  
+println(str[1])  
+println(str[str.length-1])  
+}  
+Output:
+H
+e
+!
+
+
+String templates
+String template expression is a piece of code which is evaluated and its result is returned into string. Both string types (escaped and raw string) contain template expressions. String templates starts with a dollar sign $ which consists either a variable name or an arbitrary expression in curly braces.
+String template as variable name:
+val i =10  
+print("i = $i") //i=10  
+  
+fun main(args: Array<String>) {  
+val i =10  
+    print("i = $i")//i=10  
+}  
+Output:
+i=10
+
+
+String template as arbitrary expression in curly braces:
+String template is also used in arbitrary expression in curly braces to evaluate a string expression. This is done by using dollar sign $.
+fun main(args: Array<String>) {  
+val str = "abc"  
+println("$str is a string which length is ${str.length}")  
+}  
+abc is a string which length is 3
+
+
+String template in raw string:
+fun main(args: Array<String>) {  
+val a = 10  
+val b = 5  
+  
+val myString = """value $a  
+        |is greater than value $b  
+    """.trimMargin()  
+println("${myString.trimMargin()}")  
+}  
+Output:
+value 10
+is greater than value 5
+
+
+Kotlin String Literals
+Kotlin has two types of string literals:
+Escaped String
+Raw String
+Escaped String
+Escape String is declared within double quote (" ") and may contain escape characters like '\n', '\t', '\b' ,'\r','\$'etc.
+val text1 ="Hello, JavaTpoint"  
+//or  
+val text2 ="Hello, JavaTpoint\n"  
+//or  
+val text3 ="Hello, \nJavaTpoint"  
+Raw String
+Row String is declared within triple quote (""" """).It provides facility to declare String in new lines and contain multiple lines. Row String cannot contain any escape character.
+val text1 ="""  
+             Welcome   
+                 To  
+Atomic robot  
+    """  
+While using raw string with new line, it generates a | as margin prefix. For example:
+fun main(args: Array<String>) {  
+  
+val text = """Kotlin is official language  
+        |announce by Google for  
+        |android application development  
+    """  
+println(text)  
+}  
+Output:
+Kotlin is official language
+        |announce by Google for
+        |android application development
+
+
+String trimMargin() function
+Leading whitespace can be removed with trimMargin() function. By default, trimMargin() function uses | as margin prefix.
+fun main(args: Array<String>) {  
+  
+val text = """Kotlin is official language  
+        |announce by Google for  
+        |android application development  
+    """.trimMargin()  
+  
+println(text)  
+}  
+Output:
+Kotlin is official language
+announce by Google for
+android application development
+
+
+However, it can be change by passing a new string inside trimMargin() function.
+fun main(args: Array<String>) {  
+  
+val text = """Kotlin is official language  
+        #announce by Google for  
+        #android application development  
+    """.trimMargin("#")  
+println(text)  
+}  
+Output:
+Kotlin is official language
+announce by Google for
+android application development
+
+
+ 
+ 
+ 
+Kotlin String Equality
+In Kotlin, strings equality comparisons are done on the basis of structural equality (==) and referential equality (===).
+In structural equality two objects have separate instances in memory but contain same value.
+Referential equality specifies that two different references point the same instance in memory.
+Structural equality (==)
+To check the two objects containing the same value, we use == operator or != operator for negation. It is equivalent to equals() in java.
+fun main(args: Array<String>) {  
+val str1 = "Hello, World!"  
+val str2 = "Hello, World!"  
+println(str1==str2) //true  
+println(str1!=str2) //false  
+}  
+Output:
+true
+false
+
+
+Referential equality (===)
+To check the two different references point to the same instance, we use === operator. The !== operator is used for negation. a === b specifies true if and only if a and b both point to the same object.
+Let's see an example of referential equality to check different reference contains same instance or not. For creating string we are using a helper method buildString rather than using quotes.
+fun main(args: Array<String>) {  
+val str1 = buildString { "string value" }  
+val str2 = buildString { "string value" }  
+println(str1===str2)  
+println(str1!==str2)  
+}  
+Output:
+false
+True
+ 
+ 
+ 
+ 
+Kotlin Class and Object
+Kotlin supports both object oriented programming (OOP) as well as functional programming. Object oriented programming is based on real time objects and classes. Kotlin also support pillars of OOP language such as encapsulation, inheritance and polymorphism.
+Kotlin Class
+Kotlin class is similar to Java class, a class is a blueprint for the objects which have common properties. Kotlin classes are declared using keyword class. Kotlin class has a class header which specifies its type parameters, constructor etc. and the class body which is surrounded by curly braces.
+Syntax of Kotlin class declaration
+class className{   // class header  
+      // property  
+      // member function  
+}  
+In above example, class className is an empty constructor. It is generated by compiler automatically but if we want to provide a constructor, we need to write a constructor keyword followed by class name as:
+class className constructor(){   // class header  
+      // property  
+      // member function  
+}  
+Example of Kotlin class
+class account {  
+var acc_no: Int = 0  
+var name: String? = null  
+var amount: Float = 0f  
+  
+    fun deposit() {  
+        //deposite code  
+    }  
+  
+    fun withdraw() {  
+       // withdraw code  
+    }  
+  
+    fun checkBalance() {  
+        //balance check code  
+     }  
+  
+}  
+The account class has three properties acc_no, name, amount and three member functions deposit(), withdraw(),checkBalance().
+In Kotlin, property must be initialize or declare as abstract. In above class, properties acc_no initialize as 0, name as null and amount as 0f.
+ 
+Kotlin Object
+Object is real time entity or may be a logical entity which has state and behavior. It has the characteristics:
+state: it represents value of an object.
+behavior: it represent the functionality of an object.
+Object is used to access the properties and member function of a class. Kotlin allows to create multiple object of a class.
+Create an object
+Kotlin object is created in two steps, the first is to create reference and then create an object.
+var obj1 = className()  
+Creating multiple object
+var obj1 = className()  
+var obj2 = className()  
+Here obj1 and obj2 are reference and className() is an object.
+Access class property and member function
+Properties and member function of class are accessed by . operator using object. For example:
+obj.deopsit()  
+obj.name = Ajay   
+Let's create an example, which access the class property and member function using . operator.
+class Account {  
+    var acc_no: Int = 0  
+    var name: String =  ""  
+    var amount: Float = 0.toFloat()  
+    fun insert(ac: Int,n: String, am: Float ) {  
+        acc_no=ac  
+        name=n  
+        amount=am  
+        println("Account no: ${acc_no} holder :${name} amount :${amount}")  
+    }  
+  
+    fun deposit() {  
+        //deposite code  
+    }  
+  
+    fun withdraw() {  
+       // withdraw code  
+    }  
+  
+    fun checkBalance() {  
+        //balance check code  
+     }  
+  
+}  
+fun main(args: Array<String>){  
+    Account()  
+    var acc= Account()  
+    acc.insert(832345,"Ankit",1000f) //accessing member function  
+    println("${acc.name}") //accessing class property  
+}  
+Output:
+Account no: 832345 holder :Ankit amount :1000.0
+Ankit
+ 
+Kotlin Nested class and Inner class
+Kotlin Nested class
+Nested class is such class which is created inside another class. In Kotlin, nested class is by default static, so its data member and member function can be accessed without creating an object of class. Nested class cannot be able to access the data member of outer class.
+class outerClass{  
+   //outer class code  
+    class nestedClass{  
+      //nested class code  
+    }  
+}  
+Kotlin Nested Class Example
+class outerClass{  
+    private var name: String = "Ashu"  
+    class nestedClass{  
+var description: String = "code inside nested class"  
+        private var id: Int = 101  
+        fun foo(){  
+          //  print("name is ${name}") // cannot access the outer class member  
+println("Id is ${id}")  
+        }  
+    }  
+}  
+fun main(args: Array<String>){  
+// nested class must be initialize  
+println(outerClass.nestedClass().description) // accessing property  
+var obj = outerClass.nestedClass() // object creation  
+    obj.foo() // access member function  
+}  
+Output:
+code inside nested class
+Id is 101
+
+
+Kotlin Inner class
+Inner class is a class which is created inside another class with keyword inner. In other words, we can say that a nested class which is marked as "inner" is called inner class.
+Inner class cannot be declared inside interfaces or non-inner nested classes.
+class outerClass{  
+   //outer class code  
+    inner class innerClass{  
+      //nested class code  
+    }  
+}  
+The advantage of inner class over nested class is that, it is able to access members of outer class even it is private. Inner class keeps a reference to an object of outer class.
+Kotlin Inner Class Example
+class outerClass{  
+     private  var name: String = "Ashu"  
+     inner class  innerClass{  
+var description: String = "code inside inner class"  
+        private var id: Int = 101  
+       fun foo(){  
+println("name is ${name}") // access the outer class member even private  
+println("Id is ${id}")  
+        }  
+    }  
+}  
+fun main(args: Array<String>){  
+println(outerClass().innerClass().description) // accessing property  
+var obj = outerClass().innerClass() // object creation  
+    obj.foo() // access member function  
+  
+}  
+Output:
+code inside inner class
+name is Ashu
+Id is 101
+Kotlin Constructor
+In Kotlin, constructor is a block of code similar to method. Constructor is declared with the same name as the class followed by parenthesis '()'. Constructor is used to initialize the variables at the time of object creation.
+Types of Kotlin constructors
+There are two types of constructors in Kotlin:
+Primary constructor
+Secondary constructor
+There is only one primary constructor in a Kotlin class whereas secondary constructor may be one or more.
+Kotlin primary constructor
+Primary constructor is used to initialize the class. It is declared at class header. Primary constructor code is surrounded by parentheses with optional parameter.
+Let's see an example of declaration of primary constructor. In the below code, we declare a constructor myClass with two parameter name and id. Parameter name is only read property whereas id is read and write property.
+class myClass(valname: String,varid: Int) {  
+    // class body  
+}  
+When the object of myClasss is created, it initializes name and id with "Ashu" and "101" respectively.
+class myClass(val name: String, var id: Int) {  
+}  
+fun main(args: Array<String>){  
+val myclass = myClass ("Ashu", 101)  
+  
+println("Name = ${ myclass.name}")  
+println("Id = ${ myclass.id}")  
+}  
+Output:
+Name = Ashu
+Id = 101
+
+
+Primary constructor with initializer block
+The primary constructor does not contain any code. Initializer blocks are used to initialization of code. This block is prefixed with init keyword. At the period of instance initialization, the initialized blocks are executed in the same order as they appear in class body.
+Let's rewrite the above code using initialize block:
+class myClass(name: String, id: Int) {  
+val e_name: String  
+var e_id: Int  
+init{  
+e_name = name.capitalize()  
+e_id = id  
+  
+println("Name = ${e_name}")  
+println("Id = ${e_id}")  
+    }  
+}  
+fun main(args: Array<String>){  
+val myclass = myClass ("Ashu", 101)  
+  
+}  
+Output:
+Name = Ashu
+Id = 101
+
+
+In above code, parameters name and id accept values "Ashu" and "101" when myclass object is created. The properties name and id are used without "val" or "var", so they are not properties of myClass class.
+When object of myClass class is created, it executes initializer block which initializese_name and e_id.
+Kotlin secondary constructor
+In Kotlin, secondary constructor can be created one or more in class. The secondary constructor is created using "constructor" keyword.
+Let's see an example of declaration of secondary constructor. In the below code, we declare two constructor of myClass with two parameter name and id.
+class myClass{  
+  
+    constructor(id: Int){  
+        //code   
+    }  
+    constructor(name: String, id: Int){  
+        //code   
+    }  
+}  
+Let's see an example of secondary constructor assigning the value while object of class is created.
+class myClass{  
+  
+    constructor(name: String, id: Int){  
+println("Name = ${name}")  
+println("Id = ${id}")  
+    }  
+}  
+fun main(args: Array<String>){  
+val myclass = myClass ("Ashu", 101)  
+  
+}  
+Output:
+Name = Ashu
+Id = 101
+
+
+We can also use both primary as well as secondary constructor in a same class. By using primary as well secondary constructor in same class, secondary constructor needs to authorize to primary constructor. Authorization to another constructor in same class is done using this() keyword.
+For example:
+class myClass(password: String){  
+  
+    constructor(name: String, id: Int, password: String): this(password){  
+println("Name = ${name}")  
+println("Id = ${id}")  
+println("Password = ${password}")  
+    }  
+}  
+fun main(args: Array<String>){  
+val myclass = myClass ("Ashu", 101, "mypassword")  
+  
+}  
+Output:
+Name = Ashu
+Id = 101
+Password = mypassword
+
+
+Calling one secondary constructor from another secondary constructor of same class
+In Kotlin, one secondary constructor can call another secondary constructor of same class. This is done by using this() keyword.
+For example:
+class myClass{  
+  
+    constructor(name: String, id: Int): this(name,id, "mypassword"){  
+println("this executes next")  
+println("Name = ${name}")  
+println("Id = ${id}")  
+    }  
+  
+    constructor(name: String, id: Int,pass: String){  
+println("this executes first")  
+println("Name = ${name}")  
+println("Id = ${id}")  
+println("Password = ${pass}")  
+    }  
+}  
+fun main(args: Array<String>){  
+val myclass = myClass ("Ashu", 101)  
+  
+}  
+Output:
+this executes first
+Name = Ashu
+Id = 101
+Password = mypassword
+this executes next
+Name = Ashu
+Id = 101
+
+
+Calling supper class secondary constructor from derived class secondary constructor
+In Kotlin, one derived class secondary constructor can call the base class secondary constructor. This is done using super keyword, this is the concept of inheritance.
+open class Parent{  
+  
+    constructor(name: String, id: Int){  
+println("this executes first")  
+println("Name = ${name}")  
+println("Id = ${id}")  
+    }  
+  
+    constructor(name: String, id: Int,pass: String){  
+println("this executes third")  
+println("Name = ${name}")  
+println("Id = ${id}")  
+println("Password = ${pass}")  
+    }  
+}  
+class Child: Parent{  
+    constructor(name: String, id: Int): super(name,id){  
+println("this executes second")  
+println("Name = ${name}")  
+println("Id = ${id}")  
+    }  
+  
+   constructor(name: String, id: Int,pass: String):super(name,id,"password"){  
+println("this executes forth")  
+println("Name = ${name}")  
+println("Id = ${id}")  
+println("Password = ${pass}")  
+    }  
+}  
+fun main(args: Array<String>){  
+val obj1 = Child("Ashu", 101)  
+val obj2 = Child("Ashu", 101,"mypassword")  
+}  
+Output:
+this executes first
+Name = Ashu
+Id = 101
+this executes second
+Name = Ashu
+Id = 101
+this executes third
+Name = Ashu
+Id = 101
+Password = password
+this executes forth
+Name = Ashu
+Id = 101
+Password = mypassword
+ 
+Kotlin Visibility Modifier
+Visibility modifiers are the keywords which are used to restrict the use of class, interface, methods, and property of Kotlin in the application. These modifiers are used at multiple places such as class header or method body.
+In Kotlin, visibility modifiers are categorized into four different types:
+public
+protected
+internal
+private
+public modifier
+A public modifier is accessible from everywhere in the project. It is a default modifier in Kotlin. If any class, interface etc. are not specified with any access modifier then that class, interface etc. are used in public scope.
+public class Example{  
+}  
+class Demo{  
+}  
+public fun hello()  
+fun demo()  
+public val x = 5  
+val y = 10  
+All public declaration can be placed at top of the file. If a member of class is not specified then it is by default public.
+protected modifier
+A protected modifier with class or interface allows visibility to its class or subclass only. A protected declaration (when overridden) in its subclass is also protected modifier unless it is explicitly changed.
+open class Base{  
+    protected val i = 0  
+}  
+  
+class Derived : Base(){  
+  
+    fun getValue() : Int  
+    {  
+        return i  
+    }  
+}  
+In Kotlin, protected modifier cannot be declared at top level.
+Overriding of protected types
+open class Base{  
+  open protected val i = 5  
+}  
+class Another : Base(){  
+    fun getValue() : Int  
+    {  
+        return i  
+    }  
+    override val i =10  
+}  
+internal modifier
+The internal modifiers are newly added in Kotlin, it is not available in Java. Declaring anything makes that field marked as internal field. The internal modifier makes the field visible only inside the module in which it is implemented.
+internal class Example{  
+    internal val x = 5  
+    internal fun getValue(){  
+  
+    }  
+}  
+internal val y = 10  
+In above, all the fields are declared as internal which are accessible only inside the module in which they are implemented.
+private modifier
+A private modifier allows the declaration to be accessible only within the block in which properties, fields, etc. are declare. The private modifier declaration does not allow to access the outside the scope. A private package can be accessible within that specific file.
+private class Example {  
+    private val x = 1  
+     private valdoSomething() {  
+    }  
+}  
+In above class Example,val x and function doSomthing() are declared as private. The class "Example" is accessible from the same source file, "val x" and "fun doSomthing()" are accessible within Example class.
+Example of Visibility Modifier
+open class Base() {  
+var a = 1 // public by default  
+    private var b = 2 // private to Base class  
+    protected open val c = 3  // visible to the Base and the Derived class  
+    internal val d = 4 // visible inside the same module  
+    protected fun e() { } // visible to the Base and the Derived class  
+}  
+  
+class Derived: Base() {  
+    // a, c, d, and e() of the Base class are visible  
+    // b is not visible  
+    override val c = 9 // c is protected  
+}  
+  
+fun main(args: Array<String>) {  
+val base = Base()  
+    // base.a and base.d are visible  
+    // base.b, base.c and base.e() are not visible  
+val derived = Derived()  
+    // derived.c is not visible  
+}  
+ 
+Kotlin Inheritance
+Inheritance is an important feature of object oriented programming language. Inheritance allows to inherit the feature of existing class (or base or parent class) to new class (or derived class or child class).
+The main class is called super class (or parent class) and the class which inherits the superclass is called subclass (or child class). The subclass contains features of superclass as well as its own.
+The concept of inheritance is allowed when two or more classes have same properties. It allows code reusability. A derived class has only one base class but may have multiple interfaces whereas a base class may have one or more derived classes.
+In Kotlin, the derived class inherits a base class using: operator in the class header (after the derive class name or constructor)
+open class Base(p: Int){  
+  
+}  
+class Derived(p: Int) : Base(p){  
+  
+}  
+Suppose that,we have two different classes "Programmer" and "Salesman" having the common properties 'name','age', and 'salary' as well as their own separate functionalitiesdoProgram() and fieldWork(). The feature of inheritance allows that we can inherit (Employee) containing the common features.
+open class Employee(name: String, age: Int, salary: Float) {  
+    // code of employee  
+}  
+  
+class Programmer(name: String, age: Int, salary: Float): Employee(name,age,salary) {  
+    // code of programmer  
+}  
+  
+class Salesman(name: String, age: Int, salary: Float): Employee(name,age,salary) {  
+    // code of salesman  
+}  
+All Kotlin classes have a common superclass "Any". It is a default superclass for a class with no supertypes explicitly specified.
+For example, a class Example is implicitly inherited from Any.
+class Example  
+ 
+Kotlin open keyword
+As Kotlin classes are final by default, they cannot be inherited simply. We use the open keyword before the class to inherit a class and make it to non-final,
+For example:
+open class Example{  
+// I can now be extended!  
+}  
+Kotlin Inheriting fields from a class
+When we inherit a class to derive class, all the fields and functionalities are inherited. We can use these fields and functionalities in derived class.
+For example:
+open class Base{  
+val x = 10  
+}  
+class Derived: Base() {  
+    fun foo() {  
+println("x is equal to " + x)  
+    }  
+}  
+fun main(args: Array<String>) {  
+val derived = Derived()  
+    derived.foo()   
+}  
+Output:
+x is equal to 10
+
+
+Kotlin Inheriting methods from a class
+open class Bird {  
+    fun fly() {  
+println("flying...")  
+    }  
+}  
+class Duck: Bird() {  
+    fun swim() {  
+println("swimming...")  
+    }  
+}  
+fun main(args: Array<String>) {  
+val duck = Duck()  
+    duck.fly()   
+duck.swim()  
+}  
+Output:
+flying...
+swimming...
+
+
+Kotlin Inheritance Example
+Here, we declare a class Employee is superclass and Programmer and Salesman are their subclasses. The subclasses inherit properties name, age and salary as well as subclasses containtheir own functionalitieslike doProgram() and fieldWork().
+open class Employee(name: String, age: Int, salary: Float) {  
+init {  
+println("Name is $name.")  
+println("Age is $age")  
+println("Salary is $salary")  
+    }  
+}  
+class Programmer(name: String, age: Int, salary: Float):Employee(name,age,salary){  
+    fun doProgram() {  
+println("programming is my passion.")  
+    }  
+}  
+class Salesman(name: String, age: Int, salary: Float):Employee(name,age,salary){  
+    fun fieldWork() {  
+println("travelling is my hobby.")  
+    }  
+}  
+fun main(args: Array<String>){  
+val obj1 = Programmer("Ashu", 25, 40000f)  
+    obj1.doProgram()  
+val obj2 = Salesman("Ajay", 24, 30000f)  
+    obj2.fieldWork()  
+}  
+Output:
+Name is Ashu.
+Age is 25
+Salary is 40000.0
+programming is my passion.
+Name is Ajay.
+Age is 24
+Salary is 30000.0
+travelling is my hobby.
+
+
+Kotlin Inheritance and primary constructor
+If the base and derived class both having primary constructor in that case the parameters are initialized in the primary constructor of base class. In above example of inheritance, all classes contain three parameters "name", "age" and "salary" and all these parameters are initialized in primary constructor of base class.
+When a base and derived class both contains different numbers of parameters in their primary constructor then base class parameters are initialized form derived class object.
+For example:
+open class Employee(name: String,salary: Float) {  
+init {  
+println("Name is $name.")  
+println("Salary is $salary")  
+    }  
+}  
+class Programmer(name: String, dept: String, salary: Float):Employee(name,salary){  
+init {  
+println("Name $name of department $dept with salary $salary.")  
+    }  
+    fun doProgram() {  
+println("Programming is my passion.")  
+  
+    }  
+}  
+class Salesman(name: String, dept: String, salary: Float):Employee(name,salary){  
+init {  
+println("Name $name of department $dept with salary $salary.")  
+    }  
+    fun fieldWork() {  
+println("Travelling is my hobby.")  
+  
+    }  
+}  
+fun main(args: Array<String>){  
+val obj1 = Programmer("Ashu", "Development", 40000f)  
+    obj1.doProgram()  
+println()  
+val obj2 = Salesman("Ajay", "Marketing", 30000f)  
+    obj2.fieldWork()  
+}  
+Output:
+Name is Ashu.
+Salary is 40000.0
+Name Ashu of department Development with salary 40000.0.
+Programming is my passion.
+
+Name is Ajay.
+Salary is 30000.0
+Name Ajay of department Marketing with salary 30000.0.
+Travelling is my hobby.
+
+
+When an object of derived class is created, it calls its superclass first and executes init block of base class followed by its own.
+Kotlin Inheritance and secondary constructor
+If derived class does not contain any primary constructor then it is required to call the base class secondary constructor from derived class using super keyword.
+For example,
+open class Patent {  
+  
+    constructor(name: String, id: Int) {  
+println("execute super constructor $name: $id")  
+    }  
+}  
+  
+class Child: Patent {  
+  
+    constructor(name: String, id: Int, dept: String): super(name, id) {  
+        print("execute child class constructor with property $name, $id, $dept")  
+    }  
+}  
+fun main(args: Array<String>) {  
+val child = Child("Ashu",101, "Developer")  
+}  
+Output:
+execute super constructor Ashu: 101
+execute child class constructor with property Ashu, 101, Developer
+
+
+In above example, when object of Child class is created, it calls its constructor and initializes its parameters with values "Ashu", "101" and "Developer". At the same time Child class constructor calling its supper class constructor using super keyword with values of name and id. Due to the presence of super keyword thebody of superclass constructor executes first and returns to Child class constructor.
+Kotlin Method Overriding
+Method overriding means providing the specific implementation of method of super (parent) class into its subclass (child) class.
+In other words, when subclass redefines or modifies the method of its superclass into subclass, it is known as method overriding. Method overriding is only possible in inheritance.
+KotlinRules of method overriding
+Parent class and its method or property which is to be overridden must be open (non-final).
+Method name of base class and derived class must have same.
+Method must have same parameter as in base class.
+Example of inheritance without overriding
+open class Bird {  
+    open fun fly() {  
+println("Bird is flying...")  
+    }  
+}  
+class Parrot: Bird() {  
+  
+}  
+class Duck: Bird() {  
+  
+}  
+fun main(args: Array<String>) {  
+val p = Parrot()  
+    p.fly()  
+val d = Duck()  
+    d.fly()  
+}  
+Output:
+Bird is flying...
+Bird is flying...
+
+
+In above example, a program without overriding the method of base class we found that both derived classes Parrot and Duck perform the same common operation. To overcome with this problem we use the concept of method overriding.
+Example of Kotlin method overriding
+In this example, the method fly() of parent class Bird is overridden in its subclass Parrot and Duck. To override the method of parent class, the parent class and its method which is going to override must be declare as open. At the same time method which is overridden in child class must be prefaced with keyword override.
+open class Bird {  
+    open fun fly() {  
+println("Bird is flying...")  
+    }  
+}  
+class Parrot: Bird() {  
+    override fun fly() {  
+println("Parrot is flying...")  
+    }  
+}  
+class Duck: Bird() {  
+    override fun fly() {  
+println("Duck is flying...")  
+    }  
+}  
+fun main(args: Array<String>) {  
+val p = Parrot()  
+    p.fly()  
+val d = Duck()  
+    d.fly()  
+}  
+Output:
+Parrot is flying...
+Duck is flying...
+
+
+Example of Kotlin property overriding
+Property of superclass can also be overridden in its subclass as similar to method. A color property of Bird class is overridden in its subclass Parrot and Duck and modified.
+open class Bird {  
+    open var color = "Black"  
+    open fun fly() {  
+println("Bird is flying...")  
+    }  
+}  
+class Parrot: Bird() {  
+    override var color = "Green"  
+    override fun fly() {  
+println("Parrot is flying...")  
+    }  
+}  
+class Duck: Bird() {  
+    override var color = "White"  
+    override fun fly() {  
+println("Duck is flying...")  
+    }  
+}  
+fun main(args: Array<String>) {  
+val p = Parrot()  
+    p.fly()  
+println(p.color)  
+val d = Duck()  
+    d.fly()  
+println(d.color)  
+}  
+Output:
+Parrot is flying...
+Green
+Duck is flying...
+White
+
+
+We can override the val property with var property in inheritance but vice-versa is not true.
+Kotlin superclass implementation
+Derived class can also call its superclass methods and property using super keyword.
+For example:
+open class Bird {  
+    open var color = "Black"  
+    open fun fly() {  
+println("Bird is flying...")  
+    }  
+}  
+class Parrot: Bird() {  
+    override var color = "Green"  
+    override fun fly() {  
+        super.fly()  
+println("Parrot is flying...")  
+  
+    }  
+}  
+  
+fun main(args: Array<String>) {  
+val p = Parrot()  
+    p.fly()  
+println(p.color)  
+  
+}  
+Output:
+Bird is flying...
+Parrot is flying...
+Green
+
+
+Kotlin multiple class implementation
+In Kotlin, derived class uses a supertype name in angle brackets, e.gsuper<Base> when it implements same function name provided in multiple classes.
+For example, a derived class Parrotextends its superclass Bird and implement Duck interface containing same function fly(). To call particular method of each class and interface we must be mention supertype name in angle brackets as super<Bird>.fly() and super<Duck>.fly() for each method.
+open class Bird {  
+    open var color = "Black"  
+    open fun fly() {  
+println("Bird is flying...")  
+    }  
+}  
+interface Duck {  
+     fun fly() {  
+println("Duck is flying...")  
+    }  
+}  
+class Parrot: Bird(),Duck {  
+    override var color = "Green"  
+    override fun fly() {  
+        super<Bird>.fly()  
+        super<Duck>.fly()  
+println("Parrot is flying...")  
+  
+    }  
+}  
+fun main(args: Array<String>) {  
+val p = Parrot()  
+    p.fly()  
+println(p.color)  
+  
+}  
+Output:
+Bird is flying...
+Duck is flying...
+Parrot is flying...
+Kotlin Abstract class
+A class which is declared with abstract keyword is known as abstract class. An abstract class cannot be instantiated. Means, we cannot create object of abstract class. The method and properties of abstract class are non-abstract unless they are explicitly declared as abstract.
+Declaration of abstract class
+abstract class A {  
+var x = 0  
+    abstract fun doSomething()  
+}  
+Abstract classes are partially defined classes, methods and properties which are no implementation but must be implemented into derived class. If the derived class does not implement the properties of base class then is also meant to be an abstract class.
+Abstract class or abstract function does not need to annotate with open keyword as they are open by default. Abstract member function does not contain its body. The member function cannot be declared as abstract if it contains in body in abstract class.
+Example of abstract class that has abstract method
+In this example, there is an abstract class Car that contains an abstract function run(). The implementation of run() function is provided by its subclass Honda.
+abstract class Car{  
+    abstract fun run()  
+}  
+class Honda: Car(){  
+   override fun run(){  
+println("Honda is running safely..")  
+   }  
+}  
+fun main(args: Array<String>){  
+val obj = Honda()  
+obj.run();  
+}  
+Output:
+Honda is running safely..
+
+
+A non-abstract open member function can be over ridden in an abstract class.
+open class Car {  
+    open fun run() {  
+println("Car is running..")  
+    }  
+}  
+abstract class Honda : Car() {  
+    override abstract fun run()  
+}  
+class City: Honda(){  
+    override fun run() {  
+      //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.  
+println("Honda City is running..")  
+    }  
+}  
+fun main(args: Array<String>){  
+val car = Car()  
+car.run()  
+val city = City()  
+city.run()  
+}  
+Output:
+Car is running..
+Honda City is running..
+
+
+In above example, An abstract class Honda extends the class Car and its function run(). Honda class override the run() function of Car class. The Honda class did not give the implementation of run() function as it is also declared as abstract. The implementation of abstract function run() of Honda class is provided by City class.
+Example of real scenario of abstract class
+In this example, an abstract class Bank that contains an abstract function simpleInterest() accepts three parameters p,r,and t. The class SBI and PNB provides the implementation of simpleInterest() function and returns the result.
+abstract class Bank {  
+    abstract fun simpleInterest(p: Int, r: Double, t: Int) :Double  
+}  
+  
+class SBI : Bank() {  
+    override fun simpleInterest(p: Int, r: Double, t: Int): Double{  
+        return (p*r*t)/100  
+    }  
+}  
+class PNB : Bank() {  
+    override fun simpleInterest(p: Int, r: Double, t: Int): Double{  
+        return (p*r*t)/100  
+    }  
+}  
+fun main(args: Array<String>) {  
+var sbi: Bank = SBI()  
+val sbiint = sbi.simpleInterest(1000,5.0,3)  
+println("SBI interest is $sbiint")  
+var pnb: Bank = PNB()  
+val pnbint = pnb.simpleInterest(1000,4.5,3)  
+println("PNB interest is $pnbint")  
+}  
+Output:
+SBI interest is 150.0
+PNB interest is 135.0
+Kotlin Interface
+An interface is a blueprint of class.Kotlin interface is similar to Java 8. It contains abstract method declarations as well as implementation of method.
+Defining Interface
+An interface is defined using the keyword interface. For example:
+interface MyInterface {  
+val id: Int // abstract property  
+    fun absMethod()// abstract method  
+    fun doSomthing() {  
+      // optional body  
+    }  
+}  
+The methods which are only declared without their method body are abstract by default.
+Why use Kotlin interface?
+Following are the reasons to use interface:
+Using interface supports functionality of multiple inheritance.
+It can be used achieve to loose coupling.
+It is used to achieve abstraction.
+Subclass extends only one super class but implements multiple interfaces. Extension of parent class or interface implementation are done using (:) operator in their subclass.
+Implementing Interfaces
+In this example, we are implementing the interface MyInterface in InterfaceImp class. InterfaceImp class provides the implementation of property id and abstractmethod absMethod() declared in MyInterface interface.
+interface MyInterface  {  
+var id: Int            // abstract property  
+    fun absMethod():String    // abstract method  
+    fun doSomthing() {  
+println("MyInterface doing some work")  
+    }  
+}  
+class InterfaceImp : MyInterface {  
+    override var id: Int = 101  
+    override fun absMethod(): String{  
+return "Implementing abstract method.."  
+    }  
+}  
+fun main(args: Array<String>) {  
+val obj = InterfaceImp()  
+println("Calling overriding id value = ${obj.id}")  
+obj.doSomthing()  
+println(obj.absMethod())  
+}  
+Output:
+Calling overriding id value = 101
+MyInterface doing some work
+Implementing abstract method..
+
+
+Implementing multiple interface
+We can implement multiple abstract methods of different interfaces in same class. All the abstract methods must be implemented in subclass. The other non-abstract methods of interface can be called from derived class.
+For example, creating two interface MyInterface1 and MyInterface2 with abstract methods doSomthing() and absMethod() respectively. These abstract methods are overridden in derive class MyClass.
+interface MyInterface1 {  
+    fun doSomthing()  
+}  
+interface MyInterface2 {  
+    fun absMethod()  
+}  
+class MyClass : MyInterface1, MyInterface2 {  
+    override fun doSomthing() {  
+println("overriding doSomthing() of MyInterface1")  
+    }  
+  
+    override fun absMethod() {  
+println("overriding absMethod() of MyInterface2")  
+    }  
+}  
+fun main(args: Array<String>) {  
+val myClass = MyClass()  
+myClass.doSomthing()  
+myClass.absMethod()  
+}  
+Output:
+overriding doSomthing() of MyInterface1
+overriding absMethod() of MyInterface2
+
+
+Resolving different Interfaces having same method overriding conflicts
+Let's see an example in which interface MyInterface1 and interface MyInterface2 both contains same non-abstract method. A class MyClass provides the implementation of these interfaces. Calling the method of interface using object of MyClass generates an error.
+interface MyInterface1 {  
+    fun doSomthing(){  
+println("overriding doSomthing() of MyInterface1")  
+    }  
+}  
+interface MyInterface2 {  
+    fun doSomthing(){  
+println("overriding doSomthing() of MyInterface2")  
+    }  
+}  
+class MyClass : MyInterface1, MyInterface2 {  
+  
+}  
+fun main(args: Array<String>) {  
+val myClass = MyClass()  
+myClass.doSomthing()  
+}  
+Output:
+Kotlin: Class 'MyClass' must override public open fun doSomthing(): Unit defined in MyInterface1 because it 
+inherits multiple interface methods of it
+
+
+To solve the above problem we need to specify particular method of interface which we are calling. Let's see an example below.
+In below example, two interfaces MyInterface1 and MyInterface2 contain two abstract methodsadsMethod() and absMethod(name: String) and non-abstract method doSomthing() in both respectively. A class MyClass implements both interface and override abstract method absMethod() and absMethod(name: String) . To override the non-abstract method doSomthing() we need to specify interface name with method using super keyword as super<interface_name>.methodName().
+interface MyInterface1 {  
+    fun doSomthing() {  
+println("MyInterface 1 doing some work")  
+    }  
+        fun absMethod()  
+}  
+interface MyInterface2 {  
+    fun doSomthing(){  
+println("MyInterface 2 doing some work")  
+    }  
+    fun absMethod(name: String)  
+}  
+class MyClass : MyInterface1, MyInterface2 {  
+    override fun doSomthing() {  
+        super<MyInterface2>.doSomthing()  
+    }  
+  
+    override fun absMethod() {  
+println("Implements absMethod() of MyInterface1")  
+    }  
+    override fun absMethod(n: String) {  
+println("Implements absMethod(name) of MyInterface2 name is  $n")  
+    }  
+}  
+fun main(args: Array<String>) {  
+val myClass = MyClass()  
+myClass.doSomthing()  
+myClass.absMethod()  
+myClass.absMethod("Ashu")  
+}  
+Output:
+MyInterface 2 doing some work
+Implements absMethod() of MyInterface1
+Implements absMethod(name) of MyInterface2 name is  Ashu
+
+
+interface MyInterface1 {  
+    fun doSomthing() {  
+println("MyInterface 1 doing some work")  
+    }  
+    fun absMethod()  
+}  
+  
+interface MyInterface2 {  
+    fun doSomthing() {  
+println("MyInterface 2 doing some work")  
+    }  
+   fun absMethod() {  
+println("MyInterface 2 absMethod")  
+    }  
+  
+}  
+  
+class C : MyInterface1 {  
+    override fun absMethod() {  
+println("MyInterface1 absMethod implementation")  
+    }  
+}  
+  
+class D : MyInterface1, MyInterface2 {  
+    override fun doSomthing() {  
+        super<MyInterface1>.doSomthing()  
+        super<MyInterface2>.doSomthing()  
+    }  
+  
+    override fun absMethod() {  
+  
+        super<MyInterface2>.absMethod()  
+    }  
+}  
+  
+fun main(args: Array<String>) {  
+val d = D()  
+val c = C()  
+d.doSomthing()  
+d.absMethod()  
+c.doSomthing()  
+c.absMethod()  
+}  
+Output:
+MyInterface 1 doing some work
+MyInterface 2 doing some work
+MyInterface 2 absMethod
+MyInterface 1 doing some work
+MyInterface1 absMethod implementation
+Kotlin Data class
+Data class is a simple class which is used to hold data/state and contains standard functionality. A data keyword is used to declare a class as a data class.
+data class User(val name: String, val age: Int)  
+Declaring a data class must contains at least one primary constructor with property argument (val or var).
+Data class internally contains the following functions:
+equals(): Boolean
+hashCode(): Int
+toString(): String
+component() functions corresponding to the properties
+copy()
+Due to presence of above functions internally in data class, the data class eliminates the boilerplate code.
+A compression between Java data class and Kotlin data class
+If we want to create a User entry in Java using data class, it require lots of boilerplate code.
+import java.util.Objects;  
+  
+public class User {  
+    private String name;  
+    private int id;  
+    private String email;  
+  
+    public User(String name, int id, String email) {  
+        this.name = name;  
+        this.id = id;  
+this.email = email;  
+    }  
+  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public void setName(String name) {  
+        this.name = name;  
+    }  
+  
+    public intgetId() {  
+        return id;  
+    }  
+  
+    public void setId(int id) {  
+        this.id = id;  
+    }  
+  
+    public String getEmail() {  
+        return email;  
+    }  
+  
+    public void setEmail(String email) {  
+this.email = email;  
+    }  
+  
+    @Override  
+    public boolean equals(Object o) {  
+        if (this == o) return true;  
+        if (!(o instanceof User)) return false;  
+        User user = (User) o;  
+        return getId() == user.getId() &&  
+Objects.equals(getName(), user.getName()) &&  
+Objects.equals(getEmail(), user.getEmail());  
+    }  
+  
+    @Override  
+    public inthashCode() {  
+  
+        return Objects.hash(getName(), getId(), getEmail());  
+    }  
+  
+    @Override  
+    public String toString() {  
+        return "User{" +  
+                "name='" + name + '\'' +  
+                ", id=" + id +  
+                ", email='" + email + '\'' +  
+                '}';  
+    }  
+}  
+Calling the constructor of above Java data class using the object of User class as
+class MyClass{  
+    public static void main(String agrs[]){  
+        User u = new User("Ashu",101,"mymail@mail.com");  
+System.out.println(u);  
+    }  
+}  
+Output:
+User{name='Ashu', id=101, email='mymail@mail.com'}
+
+
+The above Java data class code is rewritten in Kotlin data code in single line as
+data class User(var name: String, var id: Int, var email: String)  
+Calling the constructor of above Kotlin data class using the object of User class as
+fun main(agrs: Array<String>) {  
+val u = User("Ashu", 101, "mymail@mail.com")  
+println(u)  
+}  
+Output:
+User(name=Ashu, id=101, email=mymail@mail.com)
+
+
+Requirements of data class
+In order to create a data class, we need to fulfill the following requirements:
+Contain primary constructor with at least one parameter.
+Parameters of primary constructor marked as val or var.
+Data class cannot be abstract, inner, open or sealed.
+Before 1.1,data class may only implements interface. After that data classes may extend other classes.
+Kotlin data class toString() methods
+Kotlin data class only focuses on data rather than code implementation.
+Let's see a simple program without data class. In this class, we are trying to print the reference of Product class using its object.
+class Product(varitem: String, var price: Int)  
+  
+fun main(agrs: Array<String>) {  
+val p = Product("laptop", 25000)  
+println(p)  
+}  
+While printing the reference of Product class, it displays the hashCode() with class name of Product. It does not print the data.
+Output:
+Product@266474c2
+
+
+The above program is rewritten using data class and printing the reference of Product class and displaying the data of object. It happens because the data class internally contains the toString() which display the string representation of object .
+data class Product(varitem: String, var price: Int)  
+  
+fun main(agrs: Array<String>) {  
+val p = Product("laptop", 25000)  
+println(p)  
+}  
+Output:
+Product(name=laptop, price=25000)
+
+
+Kotlin data classequals() and hashCode()
+The equal() method is used to check other object is "equal to" current object. While doing comparison between two or more hashCode(), equals() method returns true if the hashCode() are equal, else it returns a false.
+For example, let's see an example in which a normal class comparing the two references of same class Product having same data.
+class Product(varitem: String, var price: Int)  
+  
+fun main(agrs: Array<String>) {  
+val p1 = Product("laptop", 25000)  
+val p2 = Product("laptop", 25000)  
+println(p1==p2)  
+println(p1.equals(p2))  
+}  
+In above program, reference p1 and reference p2 has different references. Due to different reference values in p1 and p2, doing comparison displays false.
+Output:
+false
+false
+
+
+The above program is rewritten using data class, printing the reference of Product class and displaying the data of object.
+The hashCode() method returns hash code for the object. The hashCode() produce same integer result, if two objects are equal.
+data class Product(varitem: String, var price: Int)  
+  
+fun main(agrs: Array<String>) {  
+val p1 = Product("laptop", 25000)  
+val p2 = Product("laptop", 25000)  
+println(p1==p2)  
+println(p1.equals(p2))  
+}  
+Output:
+true
+true
+
+
+Kotlin data class copy() method
+The data class provides a copy() method which is used to create a copy (or colon) of object. Using copy() method, some or all properties of object can be altered.
+For example:
+data class Product(var item: String, var price: Int)  
+  
+fun main(agrs: Array<String>) {  
+val p1 = Product("laptop", 25000)  
+println("p1 object contain data : $p1")  
+val p2 = p1.copy()  
+println("p2 copied object contains default data of p1: $p2")  
+val p3 = p1.copy(price = 20000)  
+println("p3 contain altered data of p1 : $p3")  
+}  
+Output:
+p1 object contain data : Product(item=laptop, price=25000)
+p2 copied object contains default data of p1: Product(item=laptop, price=25000)
+p3 contain altered data of p1 : Product(item=laptop, price=20000)
+
+
+Default and named arguments in data class
+We can also assign the default arguments in primary constructor of data class. These default values can be changed later on program if required.
+For example:
+data class Product(var item: String = "laptop", var price: Int = 25000)  
+  
+fun main(agrs: Array<String>) {  
+val p1 = Product(price = 20000)  
+println(p1)  
+}  
+Output:
+Product(item=laptop, price=20000)
+Kotlin Sealed Class
+Sealed class is a class which restricts the class hierarchy. A class can be declared as sealed class using "sealed" keyword before the class name. It is used to represent restricted class hierarchy.
+Sealed class is used when the object have one of the types from limited set, but cannot have any other type.
+The constructors of sealed classes are private in default and cannot be allowed as non-private.
+Declaration of sealed class
+sealed class MyClass  
+The subclasses of sealed classes must be declared in the same file in which sealed class itself.
+sealed class Shape{  
+    class Circle(var radius: Float): Shape()  
+    class Square(var length: Int): Shape()  
+    class Rectangle(var length: Int, var breadth: Int): Shape()  
+ object NotAShape : Shape()  
+}  
+Sealed class ensures the important of type-safety by restricting the set of types at compile time only.
+sealed class A{  
+    class B : A()  
+    {  
+class E : A() //this works.  
+    }  
+    class C : A()  
+init {  
+println("sealed class A")  
+    }  
+}  
+  
+class D : A() //this works  
+{  
+class F: A() //This won't work,because sealed class is defined in another scope.  
+}  
+A sealed class is implicitly an abstract class which cannot be instantiated.
+sealed class MyClass  
+fun main(args: Array<String>)  
+{  
+var myClass = MyClass() //compiler error. sealed types cannot be instantiated.  
+}  
+Sealed class with when
+Sealed classes are commonly used with when expression. As the sub classes of sealed classes have their own types act as a case. Due to this, when expression in sealed class covers all the cases and avoid to add else clause.
+For example:
+sealed class Shape{  
+    class Circle(var radius: Float): Shape()  
+    class Square(var length: Int): Shape()  
+    class Rectangle(var length: Int, var breadth: Int): Shape()  
+  //  object NotAShape : Shape()  
+}  
+  
+fun eval(e: Shape) =  
+        when (e) {  
+            is Shape.Circle ->println("Circle area is ${3.14*e.radius*e.radius}")  
+            is Shape.Square ->println("Square area is ${e.length*e.length}")  
+            is Shape.Rectangle ->println("Rectagle area is ${e.length*e.breadth}")  
+            //else -> "else case is not require as all case is covered above"  
+          //  Shape.NotAShape ->Double.NaN  
+        }  
+fun main(args: Array<String>) {  
+  
+var circle = Shape.Circle(5.0f)  
+var square = Shape.Square(5)  
+var rectangle = Shape.Rectangle(4,5)  
+  
+eval(circle)  
+eval(square)  
+eval(rectangle)  
+}  
+Output:
+Circle area is 78.5
+Square area is 25
+Rectagle area is 20
+Kotlin Extension Function
+Kotlin extension function provides a facility to "add" methods to class without inheriting a class or using any type of design pattern. The created extension functions are used as a regular function inside that class.
+The extension function is declared with a prefix receiver type with method name.
+fun <class_name>.<method_name>()  
+In the above declaration, <class_name> is a receiver type and the <method_name>() is an extension function.
+Example of extension function declaration and its use
+In general, we call all methods from outside the class which are already defined inside the class.In below example, a Student class declares a method is Passed()which is called from main() function by creating the object student of Student class.
+Suppose that we want to call a method (say isExcellent()) of Student class which is not defined in class. In such situation, we create a function (isExcellent()) outside the Student class as Student.isExcellent() and call it from the main() function. The declare Student.isExcellent() function is known as extension function, where Student class is known as receiver type.
+class Student{  
+    fun isPassed(mark: Int): Boolean{  
+        return mark>40  
+    }  
+}  
+fun Student.isExcellent(mark: Int): Boolean{  
+    return mark > 90  
+}  
+fun main(args: Array<String>){  
+val student = Student()  
+val passingStatus = student.isPassed(55)  
+println("student passing status is $passingStatus")  
+  
+val excellentStatus = student.isExcellent(95)  
+println("student excellent status is $excellentStatus")  
+}  
+Output:
+student passing status is true
+student excellent status is true
+
+
+The above example only demonstrates about how to declare an extension function.
+Kotlin extension function example
+Let's see the real example of extension function. In this example, we are swapping the elements of MutableList<> using swap() method. However, MutableList<>class does not provide the swap() method internally which swap the elements of it. For doing this we create an extension function for MutableList<> with swap() function.
+The list object call the extension function (MutableList<Int>.swap(index1: Int, index2: Int):MutableList<Int>) using list.swap(0,2) function call. The swap(0,2) function pass the index value of list inside MutableList<Int>.swap(index1: Int, index2: Int):MutableList<Int>) sxtension function.
+fun MutableList<Int>.swap(index1: Int, index2: Int):MutableList<Int> {  
+val tmp = this[index1] // 'this' represents to the list  
+    this[index1] = this[index2]  
+    this[index2] = tmp  
+    return this  
+}  
+fun main(args: Array<String>) {  
+val list = mutableListOf(5,10,15)  
+println("before swapping the list :$list")  
+val result = list.swap(0, 2)  
+println("after swapping the list :$result")  
+}  
+Output:
+before swapping the list :[5, 10, 15]
+after swapping the list :[15, 10, 5]
+
+
+Extension Function as Nullable Receiver
+The extension function can be defined as nullable receiver type. This nullable extension function is called through object variable even the object value is null. The nullability of object is checked using this == null inside the body.
+Let's rewrite the above program using extension function as nullable receiver.
+funMutableList<Int>?.swap(index1: Int, index2: Int): Any {  
+if (this == null) return "null"  
+else  {  
+val tmp = this[index1] // 'this' represents to the list  
+this[index1] = this[index2]  
+this[index2] = tmp  
+return this  
+    }  
+}  
+fun main(args: Array<String>) {  
+val list = mutableListOf(5,10,15)  
+println("before swapping the list :$list")  
+val result = list.swap(0, 2)  
+println("after swapping the list :$result")  
+}  
+Output:
+before swapping the list :[5, 10, 15]
+after swapping the list :[15, 10, 5]
+
+
+Companion Object Extensions
+A companion object is an object which is declared inside a class and marked with the companion keyword. Companion object is used to call the member function of class directly using the class name (like static in java).
+A class which contains companion object can also be defined as extension function and property for the companion object.
+Example of companion object
+In this example, we call a create() function declared inside companion object using class name (MyClass) as qualifier.
+class MyClass {  
+    companion object {  
+        fun create():String{  
+            return "calls create method of companion object"  
+        }  
+    }  
+}  
+fun main(args: Array<String>){  
+val instance = MyClass.create()  
+}  
+Output:
+calls create method of companion object
+
+
+Companion object extensions example
+Let's see an example of companion object extensions. The companion object extension is also being called using the class name as the qualifier.
+class MyClass {  
+    companion object {  
+        fun create(): String {  
+            return "calling create method of companion object"  
+        }  
+    }  
+}  
+fun MyClass.Companion.helloWorld() {  
+println("executing extension of companion object")  
+}  
+fun main(args: Array<String>) {  
+MyClass.helloWorld() //extension function declared upon the companion object  
+}  
+Output:
+executing extension of companion object
+
+
+ 
+Kotlin Generics
+Generics are the powerful features that allow to define classes, methods, and properties etc. which can be accessed using different types. The type differences of classes, methods, etc. are checked at compile-time.
+The generic type class or method is declared as parameterized type. A parameterized type is an instance of generic type with actual type arguments. The parameterized types are declared using angle brackets <> Generics are mostly used in collections.
+Advantage of Generics
+Following are the key advantages of using generics:
+Type-safety: Generic allows to hold only single type of object. Generic does not allow to store other object.
+Type casting is not required: There is no need to typecast the object.
+Compile time checking: Generics code is checked at compile time so that it can avoid any problems at runtime.
+Let's see a problem without using the generics.
+In this example, we create a Person class with primary constructor having single parameter. Now, we want to pass the different type of data in object of Person class (say Int type as Person(30) and String type as Person("40")). The primary constructor of Person class accept Int type Person(30) and regrets String type Person("40"). It generates a compile time error as type mismatch.
+class Person (age:Int){  
+var age: Int = age  
+init {  
+this.age= age  
+println(age)  
+    }  
+}  
+fun main(args: Array<String>){  
+var ageInt: Person = Person(30)  
+var ageString: Person = Person("30")// compile time error  
+}  
+To solve the above problem, we use a generic type class which is a user defined class that accepts different type of parametersin single class.
+Let's rewrite the above code using generic type. A class Person of type <T> is a general type class that accepts both Int and String types of parameter.
+In other words, the type parameter <T> is a place holder that will be replaced by type argument. It will be replaced when the generic type is instantiated.
+class Person<T>(age: T){  
+var age: T = age  
+init {  
+this.age= age  
+println(age)  
+    }  
+}  
+fun main(args: Array<String>){  
+var ageInt: Person<Int> = Person<Int>(30)  
+var ageString: Person<String> = Person<String>("40")  
+}  
+Output:
+30
+40
+
+
+In above example, when the object of Person class is created using type Int as Person<Int>(30) and Person<String>("40"), it replaces the Person class of type Twith Int and String respectively.
+Syntax of generic class
+class_or_interface<Type>  
+Syntax of generic method
+<Type>methodName(parameter: classType<Type>)  
+Kotlin generic example
+Let's see an example of generic method. In this example, we are accessing the generic method of collection type (ArrayList). For doing this, we create two different objectsof ArrayList class arrayListOf<String>("Ashu","Ajay") and arrayListOf<Float>(10.5f,5.0f,25.5f) of String and Float types respectively. When we call the generic method <T>printValue(list: ArrayList<T>) using printValue(stringList), the type T of method <T>printValue(list: ArrayList<T>)will be replaced by String type. Similarly, when we call the generic method using printValue(floatList), the type T of method <T>printValue(list: ArrayList<T>) will replace by Float type.
+fun main(args: Array<String>){  
+val stringList: ArrayList<String> = arrayListOf<String>("Ashu","Ajay")  
+val s: String = stringList[0]  
+println("printing the string value of stringList: $s")  
+printValue(stringList)  
+val floatList: ArrayList<Float> = arrayListOf<Float>(10.5f,5.0f,25.5f)  
+printValue(floatList)     
+}  
+fun <T>printValue(list: ArrayList<T>){  
+    for(element in list){  
+println(element)  
+    }  
+}  
+Output:
+printing the string value of stringList: Ashu
+Ashu
+Ajay
+10.5
+5.0
+25.5
+
+
+Kotlin generic extension function example
+As extension function allows to add methods to class without inherit a class or any design pattern.
+In this example, we add a method printValue()to ArrayList class of generic type. This method is called form stringList.printValue() and floatList.printValue()of String and Float types respectively. As "this" keyword in extension function represent the current calling instance. When we call the extension function using stringList.printValue(), the this represents stringList instance containing String type values. Similarly, calling the extension function using floatList.printValue(), the this represents floatList instance containing Float type values.
+fun main(args: Array<String>){  
+val stringList: ArrayList<String> = arrayListOf<String>("Ashu","Ajay")  
+stringList.printValue()  
+val floatList: ArrayList<Float> = arrayListOf<Float>(10.5f,5.0f,25.5f)  
+floatList.printValue()  
+}  
+fun <T>ArrayList<T>.printValue(){  
+    for(element in this){  
+println(element)  
+    }  
+}  
+Output:
+Ashu
+Ajay
+10.5
+5.0
+25.5
+ 
+
+Kotlin Null Safety
+Kotlin null safety is a procedure to eliminate the risk of null reference from the code. Kotlin compiler throws NullPointerException immediately if it found any null argument is passed without executing any other statements.
+Kotlin's type system is aimed to eliminate NullPointerException form the code. NullPointerException can only possible on following causes:
+An forcefully call to throw NullPointerException();
+An uninitialized of this operator which is available in a constructor passed and used somewhere.
+Use of external java code as Kotlin is Java interoperability.
+Kotlin Nullable Types and Non-Nullable Types
+Kotlin types system differentiates between references which can hold null (nullable reference) and which cannot hold null (non null reference). Normally,types of String are not nullable. To make string which holds null value, we have to explicitly define them by putting a ? behind the String as: String?
+Nullable Types
+Nullable types are declared by putting a ? behind the String as:
+var str1: String? = "hello"  
+str1 = null // ok  
+Kotlin example of nullable types
+fun main(args: Array<String>){  
+var str: String? = "Hello" // variable is declared as nullable  
+str = null  
+    print(str)  
+}  
+Output:
+null
+
+
+Non Nullable Types
+Non nullable types are normal strings which are declared as String types as:
+val str: String = null // compile error  
+str = "hello" // compile error Val cannot be reassign  
+var str2: String = "hello"  
+str2 = null // compile error  
+What happens when we assign null value to non nullable string?
+fun main(args: Array<String>){  
+var str: String = "Hello"  
+str = null // compile error  
+    print(str)  
+}  
+Output:
+It will generate a compile time error.
+Error:(3, 11) Kotlin: Null can not be a value of a non-null type String
+
+
+Checking for null in conditions
+Kotlin's If expression is used for checking condition and returns value.
+fun main(args: Array<String>){  
+var str: String? = "Hello"     // variable is declared as nullable  
+var len = if(str!=null) str.length else -1  
+println("str is : $str")  
+println("str length is : $len")  
+  
+str = null  
+println("str is : $str")  
+len = if(str!=null) str.length else -1  
+println("b length is : $len")  
+}  
+Output:
+str is : Hello
+str length is : 5
+str is : null
+b length is : -1
+ 
+
+
+ 
+
+
+
+
+
